@@ -1,0 +1,34 @@
+[
+    {
+        "aliases": [
+            "telegram",
+            "tg",
+            "телеграм",
+            "тг"
+        ],
+        "url": "https://t.me/softwarecast"
+    },
+    {
+        "aliases": [
+            "youtube",
+            "yt",
+            "ютуб",
+            "ют"
+        ],
+        "url": "https://www.youtube.com/@software-cast"
+    },
+    {
+        "aliases": [
+            "donate",
+            "донат"
+        ],
+        "url": "https://www.donationalerts.com/r/softwarecast"
+    },
+    {
+        "aliases": [
+            "boosty",
+            "бусти"
+        ],
+        "url": "https://boosty.to/software-cast"
+    }
+]

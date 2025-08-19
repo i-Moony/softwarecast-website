@@ -1,0 +1,35 @@
+---
+import redirects from "./_redirects.json";
+
+export function getStaticPaths() {
+    const paths = [];
+
+    for (const redirect of redirects) {
+        for (const alias of redirect.aliases) {
+            paths.push({
+                params: {
+                    slug: alias,
+                },
+                props: {
+                    url: redirect.url,
+                },
+            });
+        };
+    };
+
+    return paths;
+};
+
+const { url } = Astro.props;
+---
+<html>
+    <head>
+        <title>Перенаправляю...</title>
+        <link rel="canonical" href={url} />
+        <meta charset="utf-8" />
+        <meta http-equiv="refresh" content={"0; url=" + url} />
+    </head>
+    <body style="display: flex; justify-content: center; background-color:#074f8f; color:#eef5fd;">
+        <p>Подождите секунду, перенаправляю вас на сайт...</p>
+    </body>
+</html>
