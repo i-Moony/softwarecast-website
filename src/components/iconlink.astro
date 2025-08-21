@@ -14,7 +14,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 
 const { src, alt = "icon", url, text = "Ссылка", button = "Перейти" } = Astro.props;
 ---
@@ -22,7 +22,7 @@ const { src, alt = "icon", url, text = "Ссылка", button = "Перейти"
 <a href={url} class="flex flex-row items-center justify-between gap-2 text-[#eef5fd] font-light text-base md:text-xl p-2 md:p-4 hover:bg-[#d5e8ff]/20">
     <div class="flex flex-row items-center gap-3">
         <div class="bg-[#d5e8ff]/75 rounded-xl md:rounded-2xl flex justify-center items-center w-10 md:w-14 h-10 md:h-14 md:p-1.5 aspect-square">
-            <Image {src} {alt} width=96 class="w-3/4 md:w-full h-auto p-0.5 md:p-1"></Image>
+            <Picture {src} {alt} width=48 layout="constrained" class="w-3/4 md:w-full h-auto p-0.5 md:p-1"></Picture>
         </div>
         <span>{text}</span>
     </div>

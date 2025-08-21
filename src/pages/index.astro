@@ -18,7 +18,7 @@ import "../styles/global.css";
 import Head from "../components/head.astro";
 import Footer from "../components/footer.astro";
 import brand from "../images/brand.webp";
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 
 import IconSection from "../components/iconsection.astro";
 import IconLink from "../components/iconlink.astro";
@@ -41,7 +41,7 @@ import boosty from "../images/icons/boosty.png";
     <Head description="Подкаст посвящен программам на любой вкус: от операционных систем, до приложений всех сортов и мастей, от Open-Source решений до корпоративных продуктов. Меня волнуют технологии не только с технической точки зрения, но и пользовательской, а потому - личный опыт, особенности и фишки, инсайды и новости - основа обсуждения."></Head>
     <body class="flex w-full justify-center">
         <main class="max-w-[1024px] min-w-[200px] m-4 flex flex-col gap-8 items-center">
-            <Image src={brand} alt="Brand" width="1280" loading="eager"></Image>
+            <Picture src={brand} alt="Brand" width="1024" formats={['avif', 'webp', 'png']} layout="constrained" loading="eager" fetchpriority="high"></Picture>
             <IconSection title="Социальные сети:">
                 <IconLink src={youtube} alt="YouTube" url="https://youtube.com/@software-cast" text="Канал на YouTube"></IconLink>
                 <IconLink src={telegram} alt="Telegram" url="https://t.me/+avV2RbuzDnRiYWMy" text="Канал в Telegram" button="Зайти"></IconLink>

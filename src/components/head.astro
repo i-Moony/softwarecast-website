@@ -51,6 +51,11 @@ keywords = keywords + tags;
     <!-- Sitemap for Crawlers -->
     <link rel="sitemap" href="/sitemap-index.xml" />
 
+    <!-- Preload font -->
+    <link rel="preconnect" href="/intruder-alert.woff2" />
+    <link rel="preload" as="style" href="/intruder-alert.woff2" />
+    <link rel="stylesheet" href="/intruder-alert.woff2" media="print" onload="this.media = 'all'" />
+
     <!-- Metadata for SEO -->
     <meta name="author" content={author} />
     <meta name="description" content={description} />
