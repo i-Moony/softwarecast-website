@@ -14,11 +14,11 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-const { title } = Astro.props;
+const { title, id } = Astro.props;
 ---
 
 <section class="w-full flex flex-col items-center gap-4 text-center">
-    <h2 class="text-3xl md:text-5xl text-[#d5e8ff]">{title}</h2>
+    <h2 class="text-3xl md:text-5xl text-[#d5e8ff]" {id}>{title}</h2>
     <div class="w-full rounded-3xl grid bg-[#d5e8ff]/10 backdrop-blur-[3px] overflow-hidden border-2 border-[#d5e8ff]/20">
         <slot></slot>
     </div>
