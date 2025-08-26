@@ -30,5 +30,12 @@
             "бусти"
         ],
         "url": "https://boosty.to/software-cast"
+    },
+    {
+        "aliases": [
+            "twitch",
+            "твич"
+        ],
+        "url": "https://www.twitch.tv/softwarecast"
     }
 ]
