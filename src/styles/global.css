@@ -16,6 +16,19 @@
 
 @import "tailwindcss";
 
+:root {
+    interpolate-size: allow-keywords;
+}
+
+@theme {
+    --font-serif: "Georgia";
+    --default-transition-duration: 0.3s;
+    --default-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+
+    --breakpoint-xss: 24rem;
+    --breakpoint-xs: 30rem;
+}
+
 /*
     Font: Intruder Alert
     Copyright (c) Starving-4 Entertainment. 2002. This font is licensed under the terms of the Design Science Licence: http://dsl.org/copyleft/dsl.txt
@@ -33,6 +46,36 @@ body {
     background-image: url("../images/pattern.webp");
     background-color: #074f8f;
     background-size: 100px;
+    /* background-color: #D6E8FF; */
+
+    /* animation: slide 15s linear infinite; */
 
     font-family: "Intruder Alert";
+}
+
+.pattern-background {
+    background-image: url("../images/pattern.webp");
+    background-color: #074f8f;
+    background-size: 100px;
+}
+
+.pattern-background-animated {
+    background-image: url("../images/pattern.webp");
+    background-color: #074f8f;
+    background-size: 100px;
+    animation: slide 10s linear infinite;
+}
+
+.intruder {
+    font-family: 'Intruder Alert';
+    font-weight: 400;
+}
+
+@keyframes slide {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -100px -100px;
+    }
 }

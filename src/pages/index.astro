@@ -1,72 +1,69 @@
 ---
-/*
-    Copyright 2025 Danila Kononov a.k.a. moony (C)
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-*/
-import "../styles/global.css";
-import Head from "../components/head.astro";
-import Footer from "../components/footer.astro";
-import brand from "../images/brand.webp";
+import Section from "../components/section.astro";
+import Default from "../layouts/default.astro";
 import { Picture } from "astro:assets";
 
-import IconSection from "../components/iconsection.astro";
-import IconLink from "../components/iconlink.astro";
-import youtube from "../images/icons/youtube.png";
-import telegram from "../images/icons/telegram.png";
-import vk from "../images/icons/vk.webp";
-import twitch from "../images/icons/twitch.png";
-import applePodcasts from "../images/icons/apple-podcasts.png";
-import yandexMusic from "../images/icons/yandex-music.png";
-import castbox from "../images/icons/castbox.png";
-import overcast from "../images/icons/overcast.png";
-import pocketcasts from "../images/icons/pocketcasts.png";
-import deezer from "../images/icons/deezer.png";
-import zvuk from "../images/icons/zvuk.png";
-import podcastAddict from "../images/icons/podcast-addict.png";
-import donationAlerts from "../images/icons/donation-alerts.png";
-import boosty from "../images/icons/boosty.png";
+import Logo from "../images/logo.png";
 ---
 
-<html lang="ru" dir="ltr">
-    <Head description="Подкаст посвящен программам на любой вкус: от операционных систем, до приложений всех сортов и мастей, от Open-Source решений до корпоративных продуктов. Меня волнуют технологии не только с технической точки зрения, но и пользовательской, а потому - личный опыт, особенности и фишки, инсайды и новости - основа обсуждения."></Head>
-    <body class="flex w-full justify-center">
-        <main class="max-w-[1024px] min-w-[200px] m-4 flex flex-col gap-8 items-center">
-            <Picture src={brand} alt="Brand" width="1024" formats={['avif', 'webp', 'png']} layout="constrained" loading="eager" fetchpriority="high"></Picture>
-            <IconSection title="Социальные сети:" id="socials">
-                <IconLink src={youtube} alt="YouTube" url="https://youtube.com/@software-cast" text="Канал на YouTube"></IconLink>
-                <IconLink src={telegram} alt="Telegram" url="https://t.me/+avV2RbuzDnRiYWMy" text="Канал в Telegram" button="Зайти"></IconLink>
-                <IconLink src={twitch} alt="Twitch" url="https://www.twitch.tv/softwarecast" text="Ламповый канал на Twitch" button="Открыть"></IconLink>
-                <IconLink src={vk} alt="VK" url="https://vk.com/softwarecast" text="Группа во ВКонтакте"></IconLink>
-            </IconSection>
-            <IconSection title="Слушать/смотреть подкаст:" id="listen">
-                <IconLink src={youtube} alt="YouTube" url="https://www.youtube.com/playlist?list=PLAAj7NjK5XfvPIp6TfALQ0kEJ5gdg4l94" text="Видеоверсия на YouTube" button="Смотреть"></IconLink>
-                <IconLink src={applePodcasts} alt="Apple Podcasts" url="https://podcasts.apple.com/us/podcast/%D1%81%D0%BE%D1%84%D1%82%D0%B2%D0%B0%D1%80%D1%8C%D0%BA%D0%B0%D1%81%D1%82/id1822168672" text="Apple Подкасты" button="Слушать"></IconLink>
-                <IconLink src={yandexMusic} alt="Yandex Music" url="https://music.yandex.ru/album/37151903" text="Яндекс Музыка" button="Слушать"></IconLink>
-                <IconLink src={castbox} alt="CastBox" url="https://castbox.fm/vic/1822168672" text="CastBox" button="Слушать"></IconLink>
-                <IconLink src={overcast} alt="OverCast" url="https://overcast.fm/itunes1822168672" text="OverCast" button="Слушать"></IconLink>
-                <IconLink src={pocketcasts} alt="PocketCasts" url="https://pca.st/itunes/1822168672" text="PocketCasts" button="Слушать"></IconLink>
-                <IconLink src={deezer} alt="Deezer" url="https://deezer.com/show/1001982631" text="Deezer" button="Слушать"></IconLink>
-                <IconLink src={zvuk} alt="Звук" url="https://zvuk.com/podcast/39189933" text="Звук" button="Слушать"></IconLink>
-                <IconLink src={podcastAddict} alt="Podcast Addict" url="https://podcastaddict.com/podcast/5967180" text="Podcast Addict" button="Слушать"></IconLink>
-                <IconLink src={vk} alt="VK" url="https://vk.com/podcasts-231166567" text="ВКонтакте" button="Слушать"></IconLink>
-                <IconLink src={telegram} alt="Telegram" url="https://t.me/mavestreambot/app?startapp=software-cast" text="Бот в Telegram" button="Открыть"></IconLink>
-            </IconSection>
-            <IconSection title="Поддержать:" id="support">
-                <IconLink src={donationAlerts} alt="DonationAlerts" url="https://www.donationalerts.com/r/softwarecast" text="DonationAlerts" button="Задонатить"></IconLink>
-                <IconLink src={boosty} alt="Boosty" url="https://boosty.to/software-cast" text="Boosty" button="Подписаться"></IconLink>
-            </IconSection>
-            <Footer></Footer>
-        </main>
-    </body>
-</html>
+<Default description = "Подкаст посвящен программам на любой вкус: от операционных систем, до приложений всех сортов и мастей, от Open-Source решений до корпоративных продуктов. Меня волнуют технологии не только с технической точки зрения, но и пользовательской, а потому - личный опыт, особенности и фишки, инсайды и новости - основа обсуждения.">
+    <div class="flex flex-col gap-12">
+        <Section id="about">
+            <div class="pattern-background-animated rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl shadow-xl lg:shadow-2xl lg:rotate-4 shrink-0 grow-0 md:max-lg:max-w-64" slot="left">
+                <Picture src={Logo} alt="Логотип" layout="constrained" width="600" formats={["webp", "png"]} class="mick-wingert spin-the-wheel max-w-[400px]"></Picture>
+            </div>
+            <div slot="right" class="flex flex-col gap-2">
+                <h1 class="text-3xl intruder lg:text-4xl 2xl:text-5xl lg:text-justify text-[#272F3B]">СофтварьКаст - это всё, что ты хотел знать о программах!..</h1>
+                <h2 class="text-lg font-medium intruder text-right lg:text-xl 2xl:text-2xl text-[#272F3B] italic">...и даже чуточку больше!)</h2>
+                <p class="text-lg md:text-justify"><strong>Подкаст посвящен программам на любой вкус:</strong> от операционных систем, до приложений всех сортов и мастей, от Open-Source решений до корпоративных продуктов. Меня волнуют технологии не только с технической точки зрения, но и пользовательской, <strong>а потому - личный опыт, особенности и фишки, инсайды и новости - основа обсуждения.</strong></p>
+            </div>
+        </Section>
+        <Section id="content">
+            <div slot="left" class="flex flex-col gap-2">
+                <h1 class="text-3xl intruder lg:text-4xl 2xl:text-5xl text-[#272F3B]">Контент включает в себя:</h1>
+                <p class="text-lg">
+                    🔹Обзоры как популярных, так и нишевых приложений;<br>
+                    🔹Сравнение и поиск достойных аналогов в каждой сфере;<br>
+                    🔹Сравнение платных и бесплатных решений;<br>
+                    🔹Личный опыт, лайфхаки и всё то, что накапливается в процессе использования;<br>
+                    🔹Иногда и не очевидные (но от того и очень приятные) фишки, о которых мало кто знает.
+                </p>
+            </div>
+            <div class="pattern-background-animated rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl lg:shadow-2xl lg:-rotate-8 shrink-0 grow-0 md:max-lg:max-w-56 max-md:hidden max-w-72" slot="right">
+                <Picture src={Logo} alt="Логотип" layout="constrained" width="600" formats={["webp", "png"]} class="spin-the-wheel arcane"></Picture>
+            </div>
+        </Section>
+        <Section id="who">
+            <div slot="left" class="flex flex-col gap-2 md:mx-auto md:my-8 md:text-center">
+                <h1 class="text-3xl intruder lg:text-4xl 2xl:text-5xl text-[#272F3B]">Тебе точно зайдёт, если:</h1>
+                <p class="text-lg">
+                    Ты - обычный пользователь и хочешь разобраться в тонкостях софта, чтобы подобрать для себя лучшую программу;<br>
+                    Ты - интересуешься постоянно изменяющимся миром приложений и IT-решений;<br>
+                    Тебе не хватает приятного бубнежа от повёрнутого на программах ведущего.
+                </p>
+            </div>
+        </Section>
+    </div>
+</Default>
+
+<style>
+    @media (width >= 64rem) {
+        .mick-wingert.spin-the-wheel {
+            animation: spin 360s linear infinite;
+        }
+
+        .spin-the-wheel.arcane {
+            animation: spin 360s linear reverse infinite;
+        }
+    }
+
+
+    @keyframes spin {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
