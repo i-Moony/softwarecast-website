@@ -1,0 +1,14 @@
+---
+import { Picture } from "astro:assets";
+
+const { src, title, brief, source } = Astro.props;
+---
+
+<section>
+    <Picture {src} alt="Превью" layout="constrained" width="720"></Picture>
+    <div>
+        <h1>{title}</h1>
+        <p>{brief}</p>
+        <a href={source}>Узнать больше</a>
+    </div>
+</section>

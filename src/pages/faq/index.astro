@@ -1,0 +1,50 @@
+---
+import Default from "../../layouts/default.astro";
+import Details from "../../components/details.astro";
+import DetailsGroup from "../../components/detailsgroup.astro";
+---
+
+<Default>
+    <h1 class="intruder text-3xl lg:text-4xl xl:text-5xl text-center mb-8">Часто задаваемые вопросы</h1>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <DetailsGroup dark={true}>
+            <Details summary="Можно ли запросить тему?" name="Content">
+                <p>Конечно! Я буду только рад, если смогу помочь! Чтобы ускорить этот процесс я создал специальную <a href="https://forms.gle/4iGzTDSHJFZ7Dvgt7" class="underline">Google-форму</a>!</p>
+                <p>В ней есть только два вопроса: краткое название темы (но так, чтобы я мог разобрать о чём идёт речь) и вспомогательные ссылки, если есть.</p>
+                <p>Только важно понимать, что у меня много заготовленных тем, а также других занятий, так что если, вдруг, я не рассказал о вашей теме сразу, не надо на меня злиться, я постараюсь вписать её в своё расписание, но не факт, что у меня получится это сделать быстро.</p>
+            </Details>
+            <Details summary="Почему на некоторых площадках выпуск появляется позже?" name="Content">
+                <p>Дело не в том, что я люблю какие-то платформы больше других или мне принципиально важно развивать какую-то одну из них.</p>
+                <p>Дело в том, что существует процесс дистрибуции (распространения) подкастов, которым занимаюсь не я, а специальные компании. В связи с тем, как работают их внутренние процессы, выпуск на их площадке может опубликоваться раньше, а может чуть позже.</p>
+                <p>Стоит отметить, что в 99,9% случаев выпуск будет доступен на всех площадках в течении двадцати четырёх часов.</p>
+            </Details>
+        </DetailsGroup>
+        <DetailsGroup dark={false}>
+            <Details summary="Чем пользуешься для создания подкаста?" name="Setup">
+                <p>Я пользуюсь тем, о чём я рассказывал) Но список вот:</p>
+                <ul class="list-disc pl-6 flex flex-col gap-2">
+                    <li>Для любой статитичной графики: <a href="https://www.photopea.com/" class="underline">Photopea</a></li>
+                    <li>Для создания видеоряда: <a href="https://www.blackmagicdesign.com/products/davinciresolve/" class="underline">Davinci Resolve</a></li>
+                    <li>
+                        Для создания аудиоряда: <a href="https://www.reaper.fm/" class="underline">Reaper</a><br>
+                        Рекомендую всем вместо Audacity.<br>
+                        Только посмотрите вот этот <a href="https://youtu.be/y-Tu14fG4C8?si=epDdh587Bs7aHSZ9" class="underline">ролик</a>
+                    </li>
+                    <li>Для стримов лучше не найти, чем: <a href="https://www.obsproject.com/" class="underline">OBS Studio</a></li>
+                </ul>
+                <p>Все перечисленные программы работают на Windows, Linux и MacOS</p>
+            </Details>
+            <Details summary="Какая конфигурация компьютера?" name="Setup">
+                <p>Мой компьютер уже староват, но с моими потребностями справляется:</p>
+                <ul class="list-disc pl-6 flex flex-col gap-2">
+                    <li>Видеокарта NVIDIA GTX 1070 8Gb</li>
+                    <li>Процессор Intel Core i5 9600 KF</li>
+                    <li>
+                        SSD M.2 Samsung 980 500 Gb MZ-V8V500BW<br>
+                        Плюс ещё три накопителя с разными характеристиками в совокупности на 3,25Tb.
+                    </li>
+                </ul>
+            </Details>
+        </DetailsGroup>
+    </div>
+</Default>

@@ -1,0 +1,33 @@
+---
+const { summary, name } = Astro.props;
+---
+
+<details {name} class="text-[#D6E8FF]">
+    <summary class="cursor-pointer list-outside text-2xl lg:text-3xl intruder">{summary}</summary>
+    <div class="text-lg lg:text-xl mt-4 lg:text-justify flex flex-col gap-4 text-[#D6E8FFDD]">
+        <slot></slot>
+    </div>
+</details>
+
+<style>
+    summary::marker {
+        font-size: 0.9em;
+        color: #D6E8FF80;
+    }
+
+    details::details-content {
+        overflow-y: hidden;
+
+        block-size: 0px;
+
+        transition:
+            block-size cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s,
+            content-visibility cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s;
+
+        transition-behavior: allow-discrete;
+    }
+
+    details[open]::details-content {
+        block-size: max-content;
+    }
+</style>
