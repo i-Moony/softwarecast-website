@@ -9,38 +9,44 @@ import Logo from "../images/logo.png";
 <Default description = "Подкаст посвящен программам на любой вкус: от операционных систем, до приложений всех сортов и мастей, от Open-Source решений до корпоративных продуктов. Меня волнуют технологии не только с технической точки зрения, но и пользовательской, а потому - личный опыт, особенности и фишки, инсайды и новости - основа обсуждения.">
     <div class="flex flex-col gap-12">
         <Section id="about">
-            <div class="pattern-background-animated rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl shadow-xl lg:shadow-2xl lg:rotate-4 shrink-0 grow-0 max-w-[400px] md:max-lg:max-w-64 w-auto" slot="left">
+            <div class="pattern-background-animated rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl lg:shadow-2xl lg:rotate-4 shrink-0 grow-1 md:max-lg:max-w-64 max-w-[400px]" slot="left">
                 <Picture src={Logo} alt="Логотип" layout="constrained" width="600" formats={["webp", "png"]} class="mick-wingert spin-the-wheel"></Picture>
             </div>
-            <div slot="right" class="flex flex-col gap-2">
+            <div slot="right" class="flex flex-col gap-2 grow-0 shrink">
                 <h1 class="text-3xl intruder lg:text-4xl 2xl:text-5xl lg:text-justify text-[#272F3B]">СофтварьКаст - это всё, что ты хотел знать о программах!..</h1>
                 <h2 class="text-lg font-medium intruder text-right lg:text-xl 2xl:text-2xl text-[#272F3B] italic">...и даже чуточку больше!)</h2>
                 <p class="text-lg md:text-justify"><strong>Подкаст посвящен программам на любой вкус:</strong> от операционных систем, до приложений всех сортов и мастей, от Open-Source решений до корпоративных продуктов. Меня волнуют технологии не только с технической точки зрения, но и пользовательской, <strong>а потому - личный опыт, особенности и фишки, инсайды и новости - основа обсуждения.</strong></p>
             </div>
         </Section>
         <Section id="content">
-            <div slot="left" class="flex flex-col gap-2">
+            <div slot="left" class="flex flex-col gap-2 md:max-lg:ml-4">
                 <h1 class="text-3xl intruder lg:text-4xl 2xl:text-5xl text-[#272F3B]">Контент включает в себя:</h1>
-                <p class="text-lg">
-                    🔹Обзоры как популярных, так и нишевых приложений;<br>
-                    🔹Сравнение и поиск достойных аналогов в каждой сфере;<br>
-                    🔹Сравнение платных и бесплатных решений;<br>
-                    🔹Личный опыт, лайфхаки и всё то, что накапливается в процессе использования;<br>
-                    🔹Иногда и не очевидные (но от того и очень приятные) фишки, о которых мало кто знает.
-                </p>
+                <ul class="text-lg list-disc list-inside md:list-outside">
+                    <li>Обзоры как популярных, так и нишевых приложений;</li>
+                    <li>Сравнение и поиск достойных аналогов в каждой сфере;</li>
+                    <li>Сравнение платных и бесплатных решений;</li>
+                    <li>Личный опыт, лайфхаки и всё то, что накапливается в процессе использования;</li>
+                    <li>Иногда и не очевидные (но от того и очень приятные) фишки, о которых мало кто знает.</li>
+                </ul>
             </div>
             <div class="pattern-background-animated rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl lg:shadow-2xl lg:-rotate-8 shrink-0 grow-0 md:max-lg:max-w-56 max-md:hidden max-w-72" slot="right">
                 <Picture src={Logo} alt="Логотип" layout="constrained" width="600" formats={["webp", "png"]} class="spin-the-wheel arcane"></Picture>
             </div>
         </Section>
         <Section id="who">
-            <div slot="left" class="flex flex-col gap-2 md:mx-auto md:my-8 md:text-center">
+            <div slot="left" class="flex flex-col gap-2 md:mx-auto md:mt-8 md:text-center">
                 <h1 class="text-3xl intruder lg:text-4xl 2xl:text-5xl text-[#272F3B]">Тебе точно зайдёт, если:</h1>
-                <p class="text-lg">
-                    Ты - обычный пользователь и хочешь разобраться в тонкостях софта, чтобы подобрать для себя лучшую программу;<br>
-                    Ты - интересуешься постоянно изменяющимся миром приложений и IT-решений;<br>
-                    Тебе не хватает приятного бубнежа от повёрнутого на программах ведущего.
-                </p>
+                <ul class="text-lg list-disc list-inside md:list-none">
+                    <li>Ты - обычный пользователь и хочешь разобраться в тонкостях софта, чтобы подобрать для себя лучшую программу;</li>
+                    <li>Ты - интересуешься постоянно изменяющимся миром приложений и IT-решений;</li>
+                    <li>Тебе не хватает приятного бубнежа от повёрнутого на программах ведущего.</li>
+                </ul>
+            </div>
+        </Section>
+        <Section id="request">
+            <div slot="left" class="flex flex-col md:items-center gap-4 md:my-8 md:mx-auto md:text-center w-full">
+                <h1 class="text-3xl intruder lg:text-4xl 2xl:text-5xl text-[#272F3B]">Хочешь запросить тему на обсуждение?</h1>
+                <a href="https://forms.gle/4iGzTDSHJFZ7Dvgt7" target="_blank" class="text-2xl intruder lg:text-3xl 2xl:text-4xl p-4 pattern-background-animated text-[#D6E8FFDD] rounded-2xl md:w-fit w-full text-center hover:scale-[1.02] transition-all hover:text-white">Запросить тему</a>
             </div>
         </Section>
     </div>
