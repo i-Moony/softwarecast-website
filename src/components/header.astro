@@ -14,7 +14,7 @@ const { pathname } = Astro.url;
         <!-- <a href="/episodes" class={pathname.slice(1) === 'episodes' ? 'active' : ''}>Эпизоды</a> -->
         <!-- <a href="/collections" class={pathname.slice(1) === 'collections' ? 'active' : ''}>Подборки</a> -->
         <a href="/links" class={pathname.slice(1) === 'links' ? 'active' : ''}>Ссылки</a>
-        <!-- <a href="/faq" class={pathname.slice(1) === 'faq' ? 'active' : ''}>FAQ</a> -->
+        <a href="/faq" class={pathname.slice(1) === 'faq' ? 'active' : ''}>FAQ</a>
     </nav>
     <input type="checkbox" id="header-hamburger-checkbox" autocomplete="off">
     <label id="header-hamburger" for="header-hamburger-checkbox">
@@ -26,7 +26,7 @@ const { pathname } = Astro.url;
             <!-- <a href="/episodes" class={pathname.slice(1) === 'episodes' ? 'active' : ''}>Эпизоды</a> -->
             <!-- <a href="/collections" class={pathname.slice(1) === 'collections' ? 'active' : ''}>Подборки</a> -->
             <a href="/links" class={pathname.slice(1) === 'links' ? 'active' : ''}>Ссылки</a>
-            <!-- <a href="/faq" class={pathname.slice(1) === 'faq' ? 'active' : ''}>FAQ</a> -->
+            <a href="/faq" class={pathname.slice(1) === 'faq' ? 'active' : ''}>FAQ</a>
         </div>
     </nav>
 </header>
