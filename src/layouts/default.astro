@@ -10,12 +10,14 @@ const { title = "СофтварьКаст", description, tags, } = Astro.props;
 <html lang="ru" dir="ltr">
     <Head {title} {description} {tags}></Head>
     <body class="font-georgia bg-pattern-anim">
-        <Header></Header>
-        <div id="main-page" class="bg-paper text-main mt-8 md:mx-6 md:my-4 lg:my-8 xl:mx-32 2xl:mx-60 p-2 py-4 md:px-4 md:pt-4 lg:px-8 lg:pt-8 xl:px-10 xl:pt-10 rounded-t-2xl md:rounded-3xl xl:rounded-4xl shadow-2xl">
-            <main>
-                <slot></slot>
-            </main>
-            <Footer></Footer>
+        <div class="max-w-[2160px] mx-auto">
+            <Header></Header>
+            <div id="main-page" class="bg-paper text-main mt-8 md:mx-6 md:my-4 lg:my-8 xl:mx-32 2xl:mx-60 p-2 py-4 md:px-4 md:pt-4 lg:px-8 lg:pt-8 xl:px-10 xl:pt-10 rounded-t-2xl md:rounded-3xl xl:rounded-4xl shadow-2xl">
+                <main>
+                    <slot></slot>
+                </main>
+                <Footer></Footer>
+            </div>
         </div>
     </body>
 </html>
