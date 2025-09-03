@@ -7,7 +7,7 @@ const { pathname } = Astro.url;
 
 <header id="header" class="bg-pattern-anim text-brand-white font-intruder sticky top-0 flex flex-row justify-between items-center px-2 md:px-8 xl:px-32 2xl:px-64 py-2 z-50 pointer-fine:transition-all">
     <a href="/" id="header-left" class="flex flex-row items-center gap-1 z-[300] pointer-fine:transition-all group">
-        <Picture src={Logo} alt="logo" width="96" layout="constrained" formats={["avif", "webp", "png"]} class="w-16 h-auto md:w-20 lg:w-24 max-sss:hidden group-hover:pointer-fine:logo-anim pointer-fine:transition-all duration-500" id="header-logo"></Picture>
+        <Picture src={Logo} alt="logo" width="96" layout="constrained" formats={["avif", "webp", "png"]} class="w-16 h-auto md:w-20 lg:w-24 max-sss:hidden group-hover:pointer-fine:logo-anim pointer-fine:transition-all duration-500 select-none" id="header-logo"></Picture>
         <span class="text-2xl font-medium md:text-3xl lg:text-4xl group-hover:pointer-fine:ml-0.5 pointer-fine:transition-all" id="header-title">СофтварьКаст</span>
     </a>
     <nav id="header-right" class="flex gap-4 text-xl lg:gap-8 xl:text-2xl">
