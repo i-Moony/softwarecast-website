@@ -2,10 +2,14 @@
 import Default from "../../layouts/default.astro";
 import Details from "../../components/details.astro";
 import DetailsGroup from "../../components/detailsgroup.astro";
+
+const title = "FAQ - СофтварьКаст";
+const description = "На этой странице собраны все часто задаваемые вопросы.";
+const tags = "официально, official, вопрос, вопросы, question, questions, frequently, frequent, ask, asked, часто, задаваемые, задавать, чаво";
 ---
 
-<Default title="FAQ - СофтварьКаст" description="На этой странице собраны все часто задаваемые вопросы." tags="официально, official, вопрос, вопросы, question, questions, frequently, frequent, ask, asked, часто, задаваемые, задавать, чаво">
-    <h1 class="intruder text-3xl lg:text-4xl xl:text-5xl text-center mb-8">Часто задаваемые вопросы</h1>
+<Default {title} {description} {tags}>
+    <h1 class="font-intruder text-header text-3xl lg:text-4xl xl:text-5xl text-center mb-8">Часто задаваемые вопросы</h1>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <DetailsGroup dark={false}>
             <Details summary="Что такое СофтварьКаст?" name="General">

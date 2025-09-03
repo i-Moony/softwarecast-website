@@ -5,61 +5,40 @@ import Logo from "../images/logo.png";
 const { pathname } = Astro.url;
 ---
 
-<header id="header" class="pattern-background flex sticky top-0 flex-row justify-between items-center px-2 md:px-8 xl:px-32 2xl:px-64 py-2 text-[#D6E8FF] z-50">
-    <a href="/" id="header-left" class="flex flex-row items-center gap-1 z-[300]">
-        <Picture src={Logo} alt="logo" width="96" layout="constrained" formats={["avif", "webp", "png"]} class="w-16 h-auto md:w-20 lg:w-24" id="header-logo"></Picture>
-        <span class="text-2xl font-medium md:text-3xl lg:text-4xl" id="header-title">СофтварьКаст</span>
+<header id="header" class="bg-pattern-anim text-brand-white font-intruder sticky top-0 flex flex-row justify-between items-center px-2 md:px-8 xl:px-32 2xl:px-64 py-2 z-50 pointer-fine:transition-all">
+    <a href="/" id="header-left" class="flex flex-row items-center gap-1 z-[300] pointer-fine:transition-all group">
+        <Picture src={Logo} alt="logo" width="96" layout="constrained" formats={["avif", "webp", "png"]} class="w-16 h-auto md:w-20 lg:w-24 max-sss:hidden group-hover:pointer-fine:logo-anim pointer-fine:transition-all duration-500" id="header-logo"></Picture>
+        <span class="text-2xl font-medium md:text-3xl lg:text-4xl group-hover:pointer-fine:ml-0.5 pointer-fine:transition-all" id="header-title">СофтварьКаст</span>
     </a>
     <nav id="header-right" class="flex gap-4 text-xl lg:gap-8 xl:text-2xl">
         <!-- <a href="/episodes" class={pathname.slice(1) === 'episodes' ? 'active' : ''}>Эпизоды</a> -->
         <!-- <a href="/collections" class={pathname.slice(1) === 'collections' ? 'active' : ''}>Подборки</a> -->
-        <a href="/links" class={pathname.slice(1) === 'links' ? 'active' : ''}>Ссылки</a>
-        <a href="/faq" class={pathname.slice(1) === 'faq' ? 'active' : ''}>FAQ</a>
+        <a href="/links" class={pathname.startsWith("/links") ? 'active' : ''}>Ссылки</a>
+        <a href="/faq" class={pathname.startsWith("/faq") ? 'active' : ''}>FAQ</a>
     </nav>
-    <input type="checkbox" id="header-hamburger-checkbox" autocomplete="off">
+    <input type="checkbox" id="header-hamburger-checkbox" autocomplete="off" class="hidden">
     <label id="header-hamburger" for="header-hamburger-checkbox">
         <span></span>
     </label>
-    <nav id="header-fullscreen" class="pattern-background">
-        <div>
-            <a href="/" class={pathname.length === 1 ? 'active' : ''}>Главная</a>
+    <nav id="header-fullscreen" class="bg-pattern-anim invisible opacity-0 fixed top-0 left-0 w-full h-full flex justify-center items-center z-[200] transition-all md:hidden">
+        <div class="flex flex-col justify-center items-center">
+            <a href="/" class={pathname.length <= 1 ? 'active' : ''}>Главная</a>
             <!-- <a href="/episodes" class={pathname.slice(1) === 'episodes' ? 'active' : ''}>Эпизоды</a> -->
             <!-- <a href="/collections" class={pathname.slice(1) === 'collections' ? 'active' : ''}>Подборки</a> -->
-            <a href="/links" class={pathname.slice(1) === 'links' ? 'active' : ''}>Ссылки</a>
-            <a href="/faq" class={pathname.slice(1) === 'faq' ? 'active' : ''}>FAQ</a>
+            <a href="/links" class={pathname.startsWith("/links") ? 'active' : ''}>Ссылки</a>
+            <a href="/faq" class={pathname.startsWith("/faq") ? 'active' : ''}>FAQ</a>
         </div>
     </nav>
 </header>
 
 <style>
-    #header {
-        background-image: url("../images/pattern.webp");
-        background-color: #074f8f;
-        background-size: 100px;
-    }
-
-    #header-fullscreen {
-        visibility: hidden;
-        opacity: 0;
-        position: fixed;
-        z-index: 200;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-
-        transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.35s all;
-    }
-
-    #header-fullscreen div {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    #header-hamburger {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        width: max-content;
+        z-index: 300;
     }
 
     #header-fullscreen div a {
@@ -78,53 +57,6 @@ const { pathname } = Astro.url;
     #header-fullscreen div a.active {
         color: white;
         text-decoration-color: inherit;
-    }
-
-    #header-hamburger-checkbox:checked ~ #header-fullscreen {
-        visibility: visible;
-        opacity: 1;
-    }
-
-    #header-left {
-        transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s all;
-        text-decoration-color: transparent;
-        text-decoration-line: underline;
-        text-decoration-thickness: 2px;
-        text-decoration-style: solid;
-    }
-
-    #header-left:hover {
-        text-decoration-color: inherit;
-    }
-
-    #header {
-        transition: height cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s;
-    }
-
-    #header-right a {
-        display: none;
-        transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s all;
-        text-decoration-color: transparent;
-        text-decoration-line: underline;
-        text-decoration-thickness: 2px;
-        text-decoration-style: solid;
-    }
-
-    #header-right a:hover, #header-right a.active {
-        text-decoration-color: inherit;
-    }
-
-    #header-hamburger {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        cursor: pointer;
-        width: max-content;
-        z-index: 300;
-    }
-
-    #header-hamburger-checkbox {
-        display: none;
     }
 
     #header-hamburger::before,
@@ -156,44 +88,48 @@ const { pathname } = Astro.url;
         width: 0;
     }
 
-    @media (width >= 48rem) {
-        #header-right a {
-            display: unset;
-        }
+    #header-hamburger-checkbox:checked ~ #header-fullscreen {
+        visibility: visible;
+        opacity: 1;
+    }
 
+    #header-left {
+        text-decoration-color: transparent;
+        text-decoration-line: underline;
+        text-decoration-thickness: 2px;
+        text-decoration-style: solid;
+    }
+
+    #header-left:hover {
+        text-decoration-color: inherit;
+    }
+
+    #header-right a {
+        display: none;
+        transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s all;
+        text-decoration-color: transparent;
+        text-decoration-line: underline;
+        text-decoration-thickness: 2px;
+        text-decoration-style: solid;
+    }
+
+    #header-right a:hover, #header-right a.active {
+        text-decoration-color: inherit;
+    }
+
+    @media (width >= 48rem) {
         #header-hamburger {
             display: none;
         }
 
-        #header-fullscreen {
-            display: none;
+        #header-right a {
+            display: unset;
         }
     }
 
     @media (width < 48rem) {
         body:has(#header-hamburger-checkbox:checked) {
             overflow: hidden;
-        }
-    }
-
-    @media (width <= 18rem) {
-        #header-logo {
-            display: none;
-        }
-    }
-
-    /* Spinning logo */
-    @media (pointer:fine) {
-        #header-logo, #header-title {
-            transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.5s;
-        }
-
-        #header-left:hover #header-title {
-            margin-left: 0.5rem;
-        }
-
-        #header-left:hover #header-logo {
-            transform: rotate(720deg) scale(1.2);
         }
     }
 </style>
