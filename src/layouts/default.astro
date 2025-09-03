@@ -9,9 +9,9 @@ const { title = "СофтварьКаст", description, tags, } = Astro.props;
 
 <html lang="ru" dir="ltr">
     <Head {title} {description} {tags}></Head>
-    <body>
+    <body class="font-georgia bg-pattern-anim">
         <Header></Header>
-        <div id="main-page" class="text-[#0E2B50] font-serif mt-8 md:mx-6 md:my-4 lg:my-8 xl:mx-32 2xl:mx-60 p-2 py-4 md:px-4 md:pt-4 lg:px-8 lg:pt-8 xl:px-10 xl:pt-10 rounded-t-2xl md:rounded-3xl xl:rounded-4xl shadow-2xl">
+        <div id="main-page" class="bg-paper text-main mt-8 md:mx-6 md:my-4 lg:my-8 xl:mx-32 2xl:mx-60 p-2 py-4 md:px-4 md:pt-4 lg:px-8 lg:pt-8 xl:px-10 xl:pt-10 rounded-t-2xl md:rounded-3xl xl:rounded-4xl shadow-2xl">
             <main>
                 <slot></slot>
             </main>
@@ -21,14 +21,15 @@ const { title = "СофтварьКаст", description, tags, } = Astro.props;
 </html>
 
 <style>
-    body {
-        background-image: url("../images/pattern.webp");
-        background-color: #074f8f;
-        background-size: 100px;
+    html {
+        scrollbar-color: var(--color-brand-white) var(--color-brand-blue);
     }
 
-    #main-page {
-        background-image: url("../images/paper.webp");
-        background-color: #D6E8FF;
+    @media (pointer:fine) and (width <= 48rem) {
+        html {
+            /* scrollbar-gutter: stable both-edges; */
+            scrollbar-gutter: stable;
+            scrollbar-width: thin;
+        }
     }
 </style>

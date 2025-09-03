@@ -16,19 +16,6 @@
 
 @import "tailwindcss";
 
-:root {
-    interpolate-size: allow-keywords;
-}
-
-@theme {
-    --font-serif: "Georgia";
-    --default-transition-duration: 0.3s;
-    --default-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
-
-    --breakpoint-xss: 24rem;
-    --breakpoint-xs: 30rem;
-}
-
 /*
     Font: Intruder Alert
     Copyright (c) Starving-4 Entertainment. 2002. This font is licensed under the terms of the Design Science Licence: http://dsl.org/copyleft/dsl.txt
@@ -42,40 +29,70 @@
     src: url(/intruder-alert.woff2) format('woff2');
 }
 
-body {
-    background-image: url("../images/pattern.webp");
-    background-color: #074f8f;
-    background-size: 100px;
-    /* background-color: #D6E8FF; */
-
-    /* animation: slide 15s linear infinite; */
-
-    font-family: "Intruder Alert";
+/* Enable animation for details. */
+:root {
+    interpolate-size: allow-keywords;
 }
 
-.pattern-background {
-    background-image: url("../images/pattern.webp");
-    background-color: #074f8f;
-    background-size: 100px;
-}
+/* Tailwind Theme */
+@theme {
+    --font-georgia: "Georgia";
+    --font-intruder: "Intruder Alert";
 
-.pattern-background-animated {
-    background-image: url("../images/pattern.webp");
-    background-color: #074f8f;
-    background-size: 100px;
-    animation: slide 10s linear infinite;
-}
+    --color-brand-blue: #074f8f;
+    --color-brand-white: #D6E8FF;
+    --color-brand-black: #001025;
+    --color-main: #0E2B50;
+    --color-header: #272F3B;
 
-.intruder {
-    font-family: 'Intruder Alert';
-    font-weight: 400;
-}
+    --animate-slide: slide 10s linear infinite;
+    --animate-spin: spin 360s linear infinite;
+    --animate-reverse-spin: spin 360s linear reverse infinite;
 
-@keyframes slide {
-    from {
-        background-position: 0 0;
+    @keyframes slide {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: -100px -100px;
+        }
     }
-    to {
-        background-position: -100px -100px;
+
+    @keyframes spin {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
     }
+
+    --default-transition-duration: 0.3s;
+    --default-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+
+    --breakpoint-sss: 18rem;
+    --breakpoint-xss: 24rem;
+    --breakpoint-xs: 30rem;
+}
+
+/* Static brand pattern image */
+@utility bg-pattern {
+    background-image: url("../images/pattern.webp");
+    background-color: #074f8f;
+    background-size: 100px;
+}
+
+/* Animated brand pattern image */
+@utility bg-pattern-anim {
+    @apply bg-pattern animate-slide;
+}
+
+/* Paper background for main content */
+@utility bg-paper {
+    background-image: url("../images/paper.webp");
+    background-color: #D6E8FF;
+}
+
+@utility logo-anim {
+    transform: rotate(720deg) scale(1.2);
 }

@@ -14,12 +14,10 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-import { ClientRouter } from "astro:transitions";
 
 const siteTitle = "СофтварьКаст";
 const author = "Данила Кононов a.k.a. moony";
-let keywords =
-    "software, cast, softwarecast, podcast, софтварь, каст, софтварькаст, подкаст, moony, developer, разработчик, музыкант, musician, муни";
+let keywords = "software, cast, softwarecast, podcast, софтварь, каст, софтварькаст, подкаст, moony, developer, разработчик, музыкант, musician, муни";
 const link = Astro.url;
 const { title = "СофтварьКаст", description, tags } = Astro.props;
 keywords = keywords + tags;
