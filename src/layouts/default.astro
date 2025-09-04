@@ -27,6 +27,12 @@ const { title = "СофтварьКаст", description, tags, } = Astro.props;
         scrollbar-color: var(--color-brand-white) var(--color-brand-blue);
     }
 
+    @media (width <= 48rem) {
+        html {
+            scrollbar-color: var(--color-brand-blue) var(--color-brand-white);
+        }
+    }
+
     @media (pointer:fine) and (width <= 48rem) {
         html {
             /* scrollbar-gutter: stable both-edges; */
