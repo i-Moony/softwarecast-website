@@ -29,6 +29,12 @@ const tags = "официально, official, links, link, ссылка, ссы�
     <h1 class="font-intruder text-header text-4xl lg:text-5xl xl:text-6xl text-center mb-4">Ссылки</h1>
     <div class="flex flex-col gap-12">
         <section class="flex flex-col gap-4">
+            <h2 class="font-intruder text-header text-3xl lg:text-4xl xl:text-5xl text-left">Запросить тему</h2>
+            <div class="flex flex-col sm:flex-row gap-4 justify-between flex-wrap max-xss:px-2">
+                <Chip src={GoogleForms} title="Google Форме" subtitle="Запросить тему в" href="https://forms.gle/4iGzTDSHJFZ7Dvgt7"></Chip>
+            </div>
+        </section>
+        <section class="flex flex-col gap-4">
             <h2 class="font-intruder text-header text-3xl lg:text-4xl xl:text-5xl text-left">Социальные сети</h2>
             <div class="flex flex-col sm:flex-row gap-4 justify-between flex-wrap max-xss:px-2">
                 <Chip src={YouTube} title="YouTube" subtitle="Смотрите на" href="https://youtube.com/@software-cast"></Chip>
@@ -57,12 +63,6 @@ const tags = "официально, official, links, link, ссылка, ссы�
             <div class="flex flex-col sm:flex-row gap-4 justify-between flex-wrap max-xss:px-2">
                 <Chip src={DonationAlerts} title="DonationAlerts" subtitle="Задонатить на" href="https://www.donationalerts.com/r/softwarecast"></Chip>
                 <Chip src={Boosty} title="Boosty" subtitle="Подписаться на" href="https://boosty.to/software-cast"></Chip>
-            </div>
-        </section>
-        <section class="flex flex-col gap-4">
-            <h2 class="font-intruder text-header text-3xl lg:text-4xl xl:text-5xl text-left">Запросить тему</h2>
-            <div class="flex flex-col sm:flex-row gap-4 justify-between flex-wrap max-xss:px-2">
-                <Chip src={GoogleForms} title="Google Форме" subtitle="Запросить тему в" href="https://forms.gle/4iGzTDSHJFZ7Dvgt7"></Chip>
             </div>
         </section>
     </div>

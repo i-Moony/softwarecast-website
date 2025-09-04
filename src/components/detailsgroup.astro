@@ -2,6 +2,6 @@
 const { dark } = Astro.props;
 ---
 
-<div class:list={["flex flex-col gap-8 rounded-2xl shadow-2xl px-12 py-8 min-h-64 lg:min-h-96", dark ? "bg-[#001025]" : "bg-pattern-anim"]}>
+<div class:list={["flex flex-col gap-8 rounded-2xl shadow-2xl px-12 py-8 min-h-64 lg:min-h-96", dark ? "bg-pattern-dark-anim" : "bg-pattern-anim"]}>
     <slot></slot>
 </div>

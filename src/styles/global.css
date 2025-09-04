@@ -77,14 +77,24 @@
 
 /* Static brand pattern image */
 @utility bg-pattern {
-    background-image: url("../images/pattern.webp");
     background-color: #074f8f;
+    background-image: url("../images/pattern.webp");
+    background-size: 100px;
+}
+
+@utility bg-pattern-dark {
+    background-color: #001025;
+    background-image: url("../images/pattern-dark.webp");
     background-size: 100px;
 }
 
 /* Animated brand pattern image */
 @utility bg-pattern-anim {
     @apply bg-pattern animate-slide;
+}
+
+@utility bg-pattern-dark-anim {
+    @apply bg-pattern-dark animate-slide;
 }
 
 /* Paper background for main content */
