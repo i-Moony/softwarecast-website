@@ -11,7 +11,7 @@ const { pathname } = Astro.url;
         <span class="text-2xl font-medium md:text-3xl lg:text-4xl group-hover:pointer-fine:ml-0.5 pointer-fine:transition-all" id="header-title">СофтварьКаст</span>
     </a>
     <nav id="header-right" class="flex gap-4 text-xl lg:gap-8 xl:text-2xl">
-        <!-- <a href="/episodes" class={pathname.slice(1) === 'episodes' ? 'active' : ''}>Эпизоды</a> -->
+        <a href="/episodes" class={pathname.slice(1) === 'episodes' ? 'active' : ''}>Эпизоды</a>
         <!-- <a href="/collections" class={pathname.slice(1) === 'collections' ? 'active' : ''}>Подборки</a> -->
         <a href="/links" class={pathname.startsWith("/links") ? 'active' : ''}>Ссылки</a>
         <a href="/faq" class={pathname.startsWith("/faq") ? 'active' : ''}>FAQ</a>
@@ -23,7 +23,7 @@ const { pathname } = Astro.url;
     <nav id="header-fullscreen" class="bg-pattern-anim invisible opacity-0 fixed top-0 left-0 w-full h-full flex justify-center items-center z-[200] transition-all md:hidden">
         <div class="flex flex-col justify-center items-center">
             <a href="/" class={pathname.length <= 1 ? 'active' : ''}>Главная</a>
-            <!-- <a href="/episodes" class={pathname.slice(1) === 'episodes' ? 'active' : ''}>Эпизоды</a> -->
+            <a href="/episodes" class={pathname.slice(1) === 'episodes' ? 'active' : ''}>Эпизоды</a>
             <!-- <a href="/collections" class={pathname.slice(1) === 'collections' ? 'active' : ''}>Подборки</a> -->
             <a href="/links" class={pathname.startsWith("/links") ? 'active' : ''}>Ссылки</a>
             <a href="/faq" class={pathname.startsWith("/faq") ? 'active' : ''}>FAQ</a>

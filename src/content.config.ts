@@ -6,13 +6,14 @@ const episodes = defineCollection({
         pattern: "**/*.md",
         base: "./src/data/episodes",
     }),
-    schema: z.object({
+    schema: ({ image }) => z.object({
         episode_number: z.number(),
         title: z.string(),
         release_date: z.date(),
         video_length: z.string(),
         audio_length: z.string(),
         youtube_id: z.string(),
+        preview: image(),
     }),
 });
 

@@ -1,7 +1,17 @@
 ---
+import Episode from "../../components/episode.astro";
 import Default from "../../layouts/default.astro";
+import { getCollection } from 'astro:content';
+
+const episodes = (await getCollection("episodes")).sort((a, b) => b.data.episode_number - a.data.episode_number);
 ---
 
 <Default>
-    <h1 class="intruder text-4xl lg:text-5xl xl:text-6xl text-center">Список эпизодов:</h1>
+    <h1 class="font-intruder text-4xl lg:text-5xl xl:text-6xl text-center mb-4 lg:mb-8">Список эпизодов</h1>
+
+    <div class="grid grid-cols-1 gap-8 px-2 md:px-4 lg:px-0 lg:grid-cols-2 xl:grid-cols-3">
+        {episodes.map((episode) => (
+            <Episode {episode}></Episode>
+        ))}
+    </div>
 </Default>
