@@ -17,7 +17,7 @@ const { episode } = Astro.props;
 ---
 
 <Default>
-    <h1 class="intruder text-3xl lg:text-4xl xl:text-5xl text-center mb-4">{episode.data.title}</h1>
+    <h1 class="font-intruder text-3xl lg:text-4xl xl:text-5xl text-center mb-4">{episode.data.title}</h1>
     <div class="p-4 md:p-8 pattern-background-animated inline-block rounded-2xl">
         <Picture src={episode.data.preview} alt="Превью" layout="constrained" width="600" formats={["avif", "webp", "jpeg", "png"]} class="rounded-xl"></Picture>
     </div>

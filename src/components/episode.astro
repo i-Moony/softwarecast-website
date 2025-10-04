@@ -5,21 +5,48 @@ import { Image } from "astro:assets";
 import PlayButton from "/src/images/play-button.webp";
 
 interface Props {
-    episode:CollectionEntry<'episodes'>,
-};
+    episode: CollectionEntry<"episodes">;
+}
 
 const { episode } = Astro.props;
 const src = episode.data.preview;
 ---
 
-<section class="w-full flex flex-col gap-2">
-    <a class="relative group w-full overflow-hidden rounded-xl lg:rounded-2xl" href={"/episodes/" + episode.id}>
-        <Picture {src} alt="Превью" layout="constrained" width="800" class="group-hover:scale-105 w-full h-auto transition group-hover:brightness-65"></Picture>
-        <p class="absolute z-10 bottom-3 right-3 px-2 py-0.5 bg-black/35 backdrop-blur-sm rounded-md text-brand-white/80 font-light text-xs xs:text-md md:text-lg xl:text-xs font-sans">{episode.data.video_length}</p>
-        <Image src={PlayButton} alt="play" class="absolute z-20 w-1/6 opacity-65 group-hover:opacity-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-screen transition-all group-hover:scale-150"></Image>
-        <Image src={PlayButton} alt="play" class="absolute z-20 w-1/6 blur-lg opacity-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all group-hover:opacity-100 group-hover:scale-150"></Image>
+<section
+    class="w-full flex flex-col gap-2 bg-brand-blue/25 rounded-xl lg:rounded-2xl shadow-lg border-2 border-brand-blue/15"
+>
+    <a
+        href={"/episodes/" + episode.id}
+        class="w-full flex flex-col gap-2 group p-3 xl:p-3"
+    >
+        <div class="relative w-full overflow-hidden rounded-xl lg:rounded-2xl">
+            <Picture
+                {src}
+                alt="Превью"
+                layout="constrained"
+                width="900"
+                class="scale-[1.005] group-hover:scale-105 w-full h-auto transition group-hover:brightness-50"
+            />
+            <p
+                class="absolute z-10 bottom-3 right-3 px-2 py-0.5 bg-black/35 backdrop-blur-sm rounded-md text-brand-white/80 font-light text-xs xs:text-md md:text-lg xl:text-xs font-sans"
+            >
+                {episode.data.video_length}
+            </p>
+            <Image
+                src={PlayButton}
+                alt="play"
+                class="absolute z-20 w-1/6 opacity-65 group-hover:opacity-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-screen transition-all group-hover:scale-150"
+            />
+            <Image
+                src={PlayButton}
+                alt="play"
+                class="absolute z-20 w-1/6 blur-lg opacity-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all group-hover:opacity-100 group-hover:scale-150"
+            />
+        </div>
+        <h1
+            class="font-intruder text-lg xss:text-xl xs:text-2xl xl:text-xl text-justify"
+        >
+            {episode.data.title}
+        </h1>
     </a>
-    <div>
-        <h1 class="font-intruder text-xl xs:text-2xl xl:text-xl text-justify">{episode.data.title}</h1>
-    </div>
 </section>

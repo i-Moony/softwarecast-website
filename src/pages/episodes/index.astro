@@ -1,17 +1,33 @@
 ---
 import Episode from "../../components/episode.astro";
 import Default from "../../layouts/default.astro";
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
-const episodes = (await getCollection("episodes")).sort((a, b) => b.data.episode_number - a.data.episode_number);
+const episodes = (await getCollection("episodes")).sort(
+    (a, b) => b.data.episode_number - a.data.episode_number,
+);
+
+const title = "Эпизоды - СофтварьКаст";
+const description = "На этой странице собраны все эпизоды.";
+const tags = "официально, official, эпизод, эпизоды, episode, episodes";
 ---
 
-<Default>
-    <h1 class="font-intruder text-4xl lg:text-5xl xl:text-6xl text-center mb-4 lg:mb-8">Список эпизодов</h1>
+<Default {title} {description} {tags}>
+    <div class="text-center mb-4 lg:mb-8 flex flex-col gap-2 items-center">
+        <h1 class="font-intruder text-4xl lg:text-5xl xl:text-6xl">
+            Список эпизодов
+        </h1>
+        <a
+            href="/episodes/table-view"
+            class="font-intruder text-xl lg:text-3xl xl:text-4xl underline underline-offset-4 xl:underline-offset-8 w-fit"
+        >
+            Показать в таблице
+        </a>
+    </div>
 
-    <div class="grid grid-cols-1 gap-8 px-2 md:px-4 lg:px-0 lg:grid-cols-2 xl:grid-cols-3">
-        {episodes.map((episode) => (
-            <Episode {episode}></Episode>
-        ))}
+    <div
+        class="grid grid-cols-1 gap-4 md:gap-6 px-2 md:px-4 lg:px-0 lg:grid-cols-2 xl:grid-cols-3 lg:gap-7 xl:gap-5"
+    >
+        {episodes.map((episode) => <Episode {episode} />)}
     </div>
 </Default>

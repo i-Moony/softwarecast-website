@@ -11,8 +11,8 @@ const description = "Подкаст посвящен программам на �
 <Default {description}>
     <div class="flex flex-col gap-12">
         <Section id="about">
-            <div class="bg-pattern-anim rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl lg:shadow-2xl lg:rotate-4 shrink-0 grow-1 md:max-lg:max-w-64 max-w-[400px]" slot="left">
-                <Picture src={Logo} alt="Логотип" layout="constrained" width="600" formats={["webp", "png"]} class="lg:animate-spin select-none"></Picture>
+            <div class="bg-pattern-anim overflow-hidden rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl lg:shadow-2xl lg:rotate-4 shrink-0 grow-1 md:max-lg:max-w-64 max-w-[400px]" slot="left">
+                <Picture src={Logo} alt="Логотип" layout="constrained" width="600" formats={["webp", "png"]} class="animate-spin select-none"></Picture>
             </div>
             <div slot="right" class="flex flex-col gap-2 grow-0 shrink">
                 <h1 class="text-header font-intruder text-3xl lg:text-4xl 2xl:text-5xl lg:text-justify">СофтварьКаст - это всё, что ты хотел знать о программах!..</h1>
@@ -31,8 +31,8 @@ const description = "Подкаст посвящен программам на �
                     <li>Иногда и не очевидные (но от того и очень приятные) фишки, о которых мало кто знает.</li>
                 </ul>
             </div>
-            <div class="bg-pattern-anim rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl lg:shadow-2xl lg:-rotate-8 shrink-0 grow-0 md:max-lg:max-w-56 max-md:hidden max-w-72" slot="right">
-                <Picture src={Logo} alt="Логотип" layout="constrained" width="600" formats={["webp", "png"]} class="lg:animate-reverse-spin select-none"></Picture>
+            <div class="bg-pattern-anim overflow-hidden rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl lg:shadow-2xl lg:-rotate-8 shrink-0 grow-0 md:max-lg:max-w-56 max-md:hidden max-w-72" slot="right">
+                <Picture src={Logo} alt="Логотип" layout="constrained" width="600" formats={["webp", "png"]} class="animate-reverse-spin select-none"></Picture>
             </div>
         </Section>
         <Section id="who">

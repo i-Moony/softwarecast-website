@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    episode: CollectionEntry<"episodes">;
+}
+
+const { episode } = Astro.props;
+---
+
+<tr>
+    <td>
+        {episode.data.episode_number}
+    </td>
+    <td>
+        <a
+            href={"/episodes/" + episode.id}
+            class="underline underline-offset-8 lg:underline-offset-4"
+        >
+            {episode.data.title}
+        </a>
+    </td>
+    <td>
+        {episode.data.release_date.toLocaleDateString("ru")}
+    </td>
+    <td>
+        {episode.data.video_length}
+    </td>
+    <td>
+        {episode.data.audio_length}
+    </td>
+</tr>

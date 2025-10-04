@@ -1,0 +1,62 @@
+---
+import EpisodeRow from "../../components/episode-row.astro";
+import Default from "../../layouts/default.astro";
+import { getCollection } from "astro:content";
+
+const episodes = (await getCollection("episodes")).sort(
+    (a, b) => b.data.episode_number - a.data.episode_number,
+);
+
+const title = "Эпизоды (В таблице) - СофтварьКаст";
+const description = "На этой странице собраны все эпизоды.";
+const tags = "официально, official, эпизод, эпизоды, episode, episodes";
+---
+
+<Default {title} {description} {tags}>
+    <div class="text-center mb-4 lg:mb-8 flex flex-col gap-2 items-center">
+        <h1 class="font-intruder text-4xl lg:text-5xl xl:text-6xl">
+            Список эпизодов
+        </h1>
+        <a
+            href="/episodes"
+            class="font-intruder text-xl lg:text-3xl xl:text-4xl underline underline-offset-4 xl:underline-offset-8 w-fit"
+        >
+            Показать карточками
+        </a>
+    </div>
+
+    <table
+        class="bg-brand-blue/20 w-full text-brand-black text-lg lg:text-base border-2 border-brand-blue/10 shadow-lg"
+        id="episodes-table"
+    >
+        <tr class="bg-brand-blue/35">
+            <th>№</th>
+            <th>Название эпизода</th>
+            <th>Дата выпуска</th>
+            <th>Длина видео</th>
+            <th>Длина аудио</th>
+        </tr>
+        {episodes.map((episode) => <EpisodeRow {episode} />)}
+    </table>
+</Default>
+
+<style is:global>
+    #episodes-table,
+    #episodes-table td,
+    #episodes-table th {
+        padding: 1rem 0.5rem 1rem 0.5rem;
+        text-align: center;
+    }
+
+    #episodes-table tr td:nth-child(2) {
+        text-align: left;
+    }
+
+    #episodes-table tr:nth-child(odd) td {
+        background-color: color-mix(
+            in oklab,
+            var(--color-brand-blue) /* #074f8f */ 10%,
+            transparent
+        );
+    }
+</style>
