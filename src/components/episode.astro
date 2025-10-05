@@ -13,13 +13,13 @@ const src = episode.data.preview;
 ---
 
 <section
-    class="w-full flex flex-col gap-2 bg-brand-blue/25 rounded-xl lg:rounded-2xl shadow-lg border-2 border-brand-blue/15"
+    class="w-full flex flex-col gap-2 bg-brand-blue/25 rounded-2xl lg:rounded-3xl shadow-lg border-2 border-brand-blue/15 p-3 has-hover:bg-brand-blue/35 transition-all"
 >
     <a
         href={"/episodes/" + episode.id}
-        class="w-full flex flex-col gap-2 group p-3 xl:p-3"
+        class="w-full flex flex-col gap-2 group"
     >
-        <div class="relative w-full overflow-hidden rounded-xl lg:rounded-2xl">
+        <div class="relative w-full overflow-hidden rounded-2xl lg:rounded-3xl">
             <Picture
                 {src}
                 alt="Превью"
@@ -43,10 +43,10 @@ const src = episode.data.preview;
                 class="absolute z-20 w-1/6 blur-lg opacity-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all group-hover:opacity-100 group-hover:scale-150"
             />
         </div>
-        <h1
-            class="font-intruder text-lg xss:text-xl xs:text-2xl xl:text-xl text-justify"
+        <h2
+            class="font-intruder text-lg xss:text-xl xs:text-2xl xl:text-xl text-justify group-hover:underline underline-offset-4"
         >
             {episode.data.title}
-        </h1>
+        </h2>
     </a>
 </section>

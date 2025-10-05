@@ -12,7 +12,7 @@ const { episode } = Astro.props;
     <td>
         {episode.data.episode_number}
     </td>
-    <td>
+    <td class="min-w-64">
         <a
             href={"/episodes/" + episode.id}
             class="underline underline-offset-8 lg:underline-offset-4"

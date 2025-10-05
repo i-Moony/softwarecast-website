@@ -8,7 +8,7 @@ const episodes = (await getCollection("episodes")).sort(
 );
 
 const title = "Эпизоды (В таблице) - СофтварьКаст";
-const description = "На этой странице собраны все эпизоды.";
+const description = "На этой странице собраны все эпизоды в виде таблицы.";
 const tags = "официально, official, эпизод, эпизоды, episode, episodes";
 ---
 
@@ -25,26 +25,28 @@ const tags = "официально, official, эпизод, эпизоды, epis
         </a>
     </div>
 
-    <table
-        class="bg-brand-blue/20 w-full text-brand-black text-lg lg:text-base border-2 border-brand-blue/10 shadow-lg"
-        id="episodes-table"
-    >
-        <tr class="bg-brand-blue/35">
-            <th>№</th>
-            <th>Название эпизода</th>
-            <th>Дата выпуска</th>
-            <th>Длина видео</th>
-            <th>Длина аудио</th>
-        </tr>
-        {episodes.map((episode) => <EpisodeRow {episode} />)}
-    </table>
+    <div class="overflow-hidden overflow-x-auto">
+        <table
+            class="bg-brand-blue/20 w-full text-brand-black text-lg lg:text-base border-2 border-brand-blue/10 shadow-lg backdrop-blur-[2px]"
+            id="episodes-table"
+        >
+            <tr class="bg-brand-blue/35 text-xl lg:text-lg">
+                <th>№</th>
+                <th>Название эпизода</th>
+                <th>Дата выпуска</th>
+                <th>Длина видео</th>
+                <th>Длина аудио</th>
+            </tr>
+            {episodes.map((episode) => <EpisodeRow {episode} />)}
+        </table>
+    </div>
 </Default>
 
 <style is:global>
     #episodes-table,
     #episodes-table td,
     #episodes-table th {
-        padding: 1rem 0.5rem 1rem 0.5rem;
+        padding: 1rem 0.25rem 1rem 0.25rem;
         text-align: center;
     }
 
