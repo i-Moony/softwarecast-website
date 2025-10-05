@@ -5,50 +5,149 @@ import { Picture } from "astro:assets";
 
 import Logo from "../images/logo.png";
 
-const description = "Подкаст посвящен программам на любой вкус: от операционных систем, до приложений всех сортов и мастей, от Open-Source решений до корпоративных продуктов. Меня волнуют технологии не только с технической точки зрения, но и пользовательской, а потому - личный опыт, особенности и фишки, инсайды и новости - основа обсуждения.";
+import Episode from "../components/episode.astro";
+import { getCollection } from "astro:content";
+
+const episodes = (await getCollection("episodes"))
+    .sort((a, b) => b.data.episode_number - a.data.episode_number)
+    .slice(0, 3);
+
+const description =
+    "Подкаст посвящен программам на любой вкус: от операционных систем, до приложений всех сортов и мастей, от Open-Source решений до корпоративных продуктов. Меня волнуют технологии не только с технической точки зрения, но и пользовательской, а потому - личный опыт, особенности и фишки, инсайды и новости - основа обсуждения.";
 ---
 
 <Default {description}>
     <div class="flex flex-col gap-12">
         <Section id="about">
-            <div class="bg-pattern-anim overflow-hidden rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl lg:shadow-2xl lg:rotate-4 shrink-0 grow-1 md:max-lg:max-w-64 max-w-[400px]" slot="left">
-                <Picture src={Logo} alt="Логотип" layout="constrained" width="600" formats={["webp", "png"]} class="animate-spin select-none"></Picture>
+            <div
+                class="bg-pattern-anim overflow-hidden rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl lg:shadow-2xl lg:rotate-4 shrink-0 grow-1 md:max-lg:max-w-64 max-w-[400px]"
+                slot="left"
+            >
+                <Picture
+                    src={Logo}
+                    alt="Логотип"
+                    layout="constrained"
+                    width="600"
+                    formats={["webp", "png"]}
+                    class="animate-spin select-none"
+                />
             </div>
             <div slot="right" class="flex flex-col gap-2 grow-0 shrink">
-                <h1 class="text-header font-intruder text-3xl lg:text-4xl 2xl:text-5xl lg:text-justify">СофтварьКаст - это всё, что ты хотел знать о программах!..</h1>
-                <h2 class="text-header font-intruder text-lg font-medium text-right lg:text-xl 2xl:text-2xl italic">...и даже чуточку больше!)</h2>
-                <p class="text-lg md:text-justify"><strong>Подкаст посвящен программам на любой вкус:</strong> от операционных систем, до приложений всех сортов и мастей, от Open-Source решений до корпоративных продуктов. Меня волнуют технологии не только с технической точки зрения, но и пользовательской, <strong>а потому - личный опыт, особенности и фишки, инсайды и новости - основа обсуждения.</strong></p>
+                <h1
+                    class="text-header font-intruder text-3xl lg:text-4xl 2xl:text-5xl lg:text-justify"
+                >
+                    СофтварьКаст - это всё, что ты хотел знать о программах!..
+                </h1>
+                <h2
+                    class="text-header font-intruder text-lg font-medium text-right lg:text-xl 2xl:text-2xl italic"
+                >
+                    ...и даже чуточку больше!)
+                </h2>
+                <p class="text-lg md:text-justify">
+                    <strong>Подкаст посвящен программам на любой вкус:</strong> от
+                    операционных систем, до приложений всех сортов и мастей, от Open-Source
+                    решений до корпоративных продуктов. Меня волнуют технологии не
+                    только с технической точки зрения, но и пользовательской, <strong
+                        >а потому - личный опыт, особенности и фишки, инсайды и
+                        новости - основа обсуждения.</strong
+                    >
+                </p>
             </div>
         </Section>
         <Section id="content">
             <div slot="left" class="flex flex-col gap-2 md:max-lg:ml-4">
-                <h1 class="text-header font-intruder text-3xl lg:text-4xl 2xl:text-5xl">Контент включает в себя:</h1>
+                <h1
+                    class="text-header font-intruder text-3xl lg:text-4xl 2xl:text-5xl"
+                >
+                    Контент включает в себя:
+                </h1>
                 <ul class="text-lg list-disc list-inside md:list-outside">
                     <li>Обзоры как популярных, так и нишевых приложений;</li>
-                    <li>Сравнение и поиск достойных аналогов в каждой сфере;</li>
+                    <li>
+                        Сравнение и поиск достойных аналогов в каждой сфере;
+                    </li>
                     <li>Сравнение платных и бесплатных решений;</li>
-                    <li>Личный опыт, лайфхаки и всё то, что накапливается в процессе использования;</li>
-                    <li>Иногда и не очевидные (но от того и очень приятные) фишки, о которых мало кто знает.</li>
+                    <li>
+                        Личный опыт, лайфхаки и всё то, что накапливается в
+                        процессе использования;
+                    </li>
+                    <li>
+                        Иногда и не очевидные (но от того и очень приятные)
+                        фишки, о которых мало кто знает.
+                    </li>
                 </ul>
             </div>
-            <div class="bg-pattern-anim overflow-hidden rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl lg:shadow-2xl lg:-rotate-8 shrink-0 grow-0 md:max-lg:max-w-56 max-md:hidden max-w-72" slot="right">
-                <Picture src={Logo} alt="Логотип" layout="constrained" width="600" formats={["webp", "png"]} class="animate-reverse-spin select-none"></Picture>
+            <div
+                class="bg-pattern-anim overflow-hidden rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl lg:shadow-2xl lg:-rotate-8 shrink-0 grow-0 md:max-lg:max-w-56 max-md:hidden max-w-72"
+                slot="right"
+            >
+                <Picture
+                    src={Logo}
+                    alt="Логотип"
+                    layout="constrained"
+                    width="600"
+                    formats={["webp", "png"]}
+                    class="animate-reverse-spin select-none"
+                />
             </div>
         </Section>
         <Section id="who">
-            <div slot="left" class="flex flex-col gap-2 md:mx-auto md:mt-8 md:text-center">
-                <h1 class="text-header font-intruder text-3xl lg:text-4xl 2xl:text-5xl">Тебе точно зайдёт, если:</h1>
+            <div
+                slot="left"
+                class="flex flex-col gap-2 md:mx-auto md:mt-8 md:text-center"
+            >
+                <h1
+                    class="text-header font-intruder text-3xl lg:text-4xl 2xl:text-5xl"
+                >
+                    Тебе точно зайдёт, если:
+                </h1>
                 <ul class="text-lg list-disc list-inside md:list-none">
-                    <li>Ты - обычный пользователь и хочешь разобраться в тонкостях софта, чтобы подобрать для себя лучшую программу;</li>
-                    <li>Ты - интересуешься постоянно изменяющимся миром приложений и IT-решений;</li>
-                    <li>Тебе не хватает приятного бубнежа от повёрнутого на программах ведущего.</li>
+                    <li>
+                        Ты - обычный пользователь и хочешь разобраться в
+                        тонкостях софта, чтобы подобрать для себя лучшую
+                        программу;
+                    </li>
+                    <li>
+                        Ты - интересуешься постоянно изменяющимся миром
+                        приложений и IT-решений;
+                    </li>
+                    <li>
+                        Тебе не хватает приятного бубнежа от повёрнутого на
+                        программах ведущего.
+                    </li>
                 </ul>
             </div>
         </Section>
+        <Section id="latest-episodes">
+            <div slot="left" class="flex flex-col gap-4 md:text-center md:mt-8">
+                <h1
+                    class="font-intruder text-3xl lg:text-4xl 2xl:text-5xl text-[#272F3B]"
+                >
+                    Последние эпизоды:
+                </h1>
+                <div
+                    class="grid grid-cols-1 gap-4 md:gap-6 px-2 md:px-4 lg:px-0 md:grid-cols-2 xl:grid-cols-3 lg:gap-7 xl:gap-5"
+                >
+                    {episodes.map((episode) => <Episode {episode} />)}
+                </div>
+            </div>
+        </Section>
         <Section id="request">
-            <div slot="left" class="flex flex-col md:items-center gap-4 md:my-8 md:mx-auto md:text-center w-full">
-                <h1 class="font-intruder text-3xl lg:text-4xl 2xl:text-5xl text-[#272F3B]">Хочешь запросить тему на обсуждение?</h1>
-                <a href="https://forms.gle/4iGzTDSHJFZ7Dvgt7" target="_blank" class="text-brand-white bg-pattern-anim font-intruder text-2xl lg:text-3xl 2xl:text-4xl p-4 rounded-2xl md:w-fit w-full text-center hover:scale-[1.02] transition-all hover:text-white">Запросить тему</a>
+            <div
+                slot="left"
+                class="flex flex-col md:items-center gap-4 md:my-8 md:mx-auto md:text-center w-full"
+            >
+                <h1
+                    class="font-intruder text-3xl lg:text-4xl 2xl:text-5xl text-[#272F3B]"
+                >
+                    Хочешь запросить тему на обсуждение?
+                </h1>
+                <a
+                    href="https://forms.gle/4iGzTDSHJFZ7Dvgt7"
+                    target="_blank"
+                    class="text-brand-white bg-pattern-anim font-intruder text-2xl lg:text-3xl 2xl:text-4xl p-4 rounded-2xl md:w-fit w-full text-center hover:scale-[1.02] transition-all hover:text-white"
+                    >Запросить тему</a
+                >
             </div>
         </Section>
     </div>
