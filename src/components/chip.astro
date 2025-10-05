@@ -2,14 +2,32 @@
 import { Picture } from "astro:assets";
 import ExternalLink from "../images/icons/external-link.svg";
 
-const { src, alt = "icon", href, title, subtitle = "Слушайте на" } = Astro.props;
+const {
+    src,
+    alt = "icon",
+    href,
+    title,
+    subtitle = "Слушайте на",
+} = Astro.props;
 ---
 
-<a {href} target="_blank" class="bg-pattern-dark-anim hover:bg-pattern-anim text-[#525d6b] hover:text-[#5f80ad] rounded-3xl flex gap-4 items-center grow shrink-0 overflow-hidden text-md p-4 hover:scale-[1.025] transition-all xss:justify-between @container xss:min-w-74">
-    <Picture {src} {alt} width="48" layout="constrained" class="w-8 md:w-12 h-auto select-none"></Picture>
-    <div class="h-12 font-semibold flex flex-col justify-center xss:text-center">
+<a
+    {href}
+    target="_blank"
+    class="bg-pattern-dark-anim hover:bg-pattern-anim text-[#525d6b] hover:text-[#5f80ad] rounded-3xl flex gap-4 items-center grow shrink-0 overflow-hidden text-md p-4 hover:scale-[1.025] transition-all xss:justify-between @container xss:min-w-74 shadow-lg"
+>
+    <Picture
+        {src}
+        {alt}
+        width="48"
+        layout="constrained"
+        class="w-8 md:w-12 h-auto select-none"
+    />
+    <div
+        class="h-12 font-semibold flex flex-col justify-center xss:text-center"
+    >
         <p class="text-[0.75rem] @xs:text-sm">{subtitle}</p>
         <p class="text-brand-white text-sm @xs:text-lg">{title}</p>
     </div>
-    <ExternalLink class="w-4 md:w-8 h-auto max-xss:hidden"></ExternalLink>
+    <ExternalLink class="w-4 md:w-8 h-auto max-xss:hidden" />
 </a>

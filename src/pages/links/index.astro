@@ -21,48 +21,153 @@ import Boosty from "../../images/icons/boosty.png";
 import GoogleForms from "../../images/icons/google-forms.png";
 
 const title = "Ссылки - СофтварьКаст";
-const description = "На этой странице собраны все ссылки, официально связанные с моим подкастом.";
-const tags = "официально, official, links, link, ссылка, ссылки"
+const description =
+    "На этой странице собраны все ссылки, официально связанные с моим подкастом.";
+const tags = "официально, official, links, link, ссылка, ссылки";
 ---
 
 <Default {title} {description} {tags}>
-    <h1 class="font-intruder text-header text-4xl lg:text-5xl xl:text-6xl text-center mb-4">Ссылки</h1>
+    <h1
+        class="font-intruder text-header text-4xl lg:text-5xl xl:text-6xl text-center mb-4"
+    >
+        Ссылки
+    </h1>
     <div class="flex flex-col gap-12">
         <section class="flex flex-col gap-4">
-            <h2 class="font-intruder text-header text-3xl lg:text-4xl xl:text-5xl text-left">Запросить тему</h2>
-            <div class="flex flex-col sm:flex-row gap-4 justify-between flex-wrap max-xss:px-2">
-                <Chip src={GoogleForms} title="Google Форме" subtitle="Запросить тему в" href="https://forms.gle/4iGzTDSHJFZ7Dvgt7"></Chip>
+            <h2
+                class="font-intruder text-header text-3xl lg:text-4xl xl:text-5xl text-center md:text-left"
+            >
+                Запросить тему
+            </h2>
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-between flex-wrap max-xss:px-2"
+            >
+                <Chip
+                    src={GoogleForms}
+                    title="Google Форме"
+                    subtitle="Запросить тему в"
+                    href="https://forms.gle/4iGzTDSHJFZ7Dvgt7"
+                />
             </div>
         </section>
         <section class="flex flex-col gap-4">
-            <h2 class="font-intruder text-header text-3xl lg:text-4xl xl:text-5xl text-left">Социальные сети</h2>
-            <div class="flex flex-col sm:flex-row gap-4 justify-between flex-wrap max-xss:px-2">
-                <Chip src={YouTube} title="YouTube" subtitle="Смотрите на" href="https://youtube.com/@software-cast"></Chip>
-                <Chip src={Telegram} title="Telegram" subtitle="Оставайтесь на связи в" href="https://t.me/softwarecast"></Chip>
-                <Chip src={Twitch} title="Twitch" subtitle="Общайтесь вживую на" href="https://www.twitch.tv/softwarecast"></Chip>
-                <Chip src={VK} title="VK" subtitle="Ждите новостей в" href="https://vk.com/softwarecast"></Chip>
+            <h2
+                class="font-intruder text-header text-3xl lg:text-4xl xl:text-5xl text-center md:text-left"
+            >
+                Социальные сети
+            </h2>
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-between flex-wrap max-xss:px-2"
+            >
+                <Chip
+                    src={YouTube}
+                    title="YouTube"
+                    subtitle="Смотрите на"
+                    href="https://youtube.com/@software-cast"
+                />
+                <Chip
+                    src={Telegram}
+                    title="Telegram"
+                    subtitle="Оставайтесь на связи в"
+                    href="https://t.me/softwarecast"
+                />
+                <Chip
+                    src={Twitch}
+                    title="Twitch"
+                    subtitle="Общайтесь вживую на"
+                    href="https://www.twitch.tv/softwarecast"
+                />
+                <Chip
+                    src={VK}
+                    title="VK"
+                    subtitle="Ждите новостей в"
+                    href="https://vk.com/softwarecast"
+                />
             </div>
         </section>
         <section class="flex flex-col gap-4">
-            <h2 class="font-intruder text-header text-3xl lg:text-4xl xl:text-5xl text-left">Аудио-версия подкаста</h2>
-            <div class="flex flex-col sm:flex-row gap-4 justify-between flex-wrap max-xss:px-2">
-                <Chip src={ApplePodcasts} title="Apple Podcasts" href="ttps://podcasts.apple.com/us/podcast/%D1%81%D0%BE%D1%84%D1%82%D0%B2%D0%B0%D1%80%D1%8C%D0%BA%D0%B0%D1%81%D1%82/id1822168672"></Chip>
-                <Chip src={YandexMusic} title="Яндекс Музыке" href="https://music.yandex.ru/album/37151903"></Chip>
-                <Chip src={CastBox} title="CastBox" href="https://castbox.fm/vic/1822168672"></Chip>
-                <Chip src={OverCast} title="OverCast" href="https://overcast.fm/itunes1822168672"></Chip>
-                <Chip src={PocketCasts} title="PocketCasts" href="https://pca.st/itunes/1822168672"></Chip>
-                <Chip src={Deezer} title="Deezer" href="https://deezer.com/show/1001982631"></Chip>
-                <Chip src={Zvuk} title="Звуке" href="https://zvuk.com/podcast/39189933"></Chip>
-                <Chip src={PodcastAddict} title="Podcast Addict" href="https://podcastaddict.com/podcast/5967180"></Chip>
-                <Chip src={VK} title="VK Музыке" href="https://vk.com/podcasts-231166567"></Chip>
-                <Chip src={Telegram} title="Боте Telegram" subtitle="Слушайте в" href="https://t.me/mavestreambot/app?startapp=software-cast"></Chip>
+            <h2
+                class="font-intruder text-header text-3xl lg:text-4xl xl:text-5xl text-center md:text-left"
+            >
+                Аудио-версия подкаста
+            </h2>
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-between flex-wrap max-xss:px-2"
+            >
+                <Chip
+                    src={ApplePodcasts}
+                    title="Apple Podcasts"
+                    href="ttps://podcasts.apple.com/us/podcast/%D1%81%D0%BE%D1%84%D1%82%D0%B2%D0%B0%D1%80%D1%8C%D0%BA%D0%B0%D1%81%D1%82/id1822168672"
+                />
+                <Chip
+                    src={YandexMusic}
+                    title="Яндекс Музыке"
+                    href="https://music.yandex.ru/album/37151903"
+                />
+                <Chip
+                    src={CastBox}
+                    title="CastBox"
+                    href="https://castbox.fm/vic/1822168672"
+                />
+                <Chip
+                    src={OverCast}
+                    title="OverCast"
+                    href="https://overcast.fm/itunes1822168672"
+                />
+                <Chip
+                    src={PocketCasts}
+                    title="PocketCasts"
+                    href="https://pca.st/itunes/1822168672"
+                />
+                <Chip
+                    src={Deezer}
+                    title="Deezer"
+                    href="https://deezer.com/show/1001982631"
+                />
+                <Chip
+                    src={Zvuk}
+                    title="Звуке"
+                    href="https://zvuk.com/podcast/39189933"
+                />
+                <Chip
+                    src={PodcastAddict}
+                    title="Podcast Addict"
+                    href="https://podcastaddict.com/podcast/5967180"
+                />
+                <Chip
+                    src={VK}
+                    title="VK Музыке"
+                    href="https://vk.com/podcasts-231166567"
+                />
+                <Chip
+                    src={Telegram}
+                    title="Боте Telegram"
+                    subtitle="Слушайте в"
+                    href="https://t.me/mavestreambot/app?startapp=software-cast"
+                />
             </div>
         </section>
         <section class="flex flex-col gap-4">
-            <h2 class="font-intruder text-header text-3xl lg:text-4xl xl:text-5xl text-left">Поддержать</h2>
-            <div class="flex flex-col sm:flex-row gap-4 justify-between flex-wrap max-xss:px-2">
-                <Chip src={DonationAlerts} title="DonationAlerts" subtitle="Задонатить на" href="https://www.donationalerts.com/r/softwarecast"></Chip>
-                <Chip src={Boosty} title="Boosty" subtitle="Подписаться на" href="https://boosty.to/software-cast"></Chip>
+            <h2
+                class="font-intruder text-header text-3xl lg:text-4xl xl:text-5xl text-center md:text-left"
+            >
+                Поддержать
+            </h2>
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-between flex-wrap max-xss:px-2"
+            >
+                <Chip
+                    src={DonationAlerts}
+                    title="DonationAlerts"
+                    subtitle="Задонатить на"
+                    href="https://www.donationalerts.com/r/softwarecast"
+                />
+                <Chip
+                    src={Boosty}
+                    title="Boosty"
+                    subtitle="Подписаться на"
+                    href="https://boosty.to/software-cast"
+                />
             </div>
         </section>
     </div>
