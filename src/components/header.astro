@@ -20,6 +20,8 @@ const { pathname } = Astro.url;
             width="96"
             layout="constrained"
             formats={["avif", "webp", "png"]}
+            loading="eager"
+            fetchpriority="high"
             class="w-16 h-auto md:w-20 lg:w-24 max-sss:hidden group-hover:pointer-fine:logo-anim pointer-fine:transition-all duration-500 select-none"
             id="header-logo"
         />
