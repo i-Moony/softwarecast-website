@@ -22,11 +22,11 @@
     Used for Main text
 */
 @font-face {
-    font-family: 'Intruder Alert';
+    font-family: "Intruder Alert";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(/intruder-alert.woff2) format('woff2');
+    src: url(/intruder-alert.woff2) format("woff2");
 }
 
 /* Enable animation for details. */
@@ -40,10 +40,10 @@
     --font-intruder: "Intruder Alert";
 
     --color-brand-blue: #074f8f;
-    --color-brand-white: #D6E8FF;
+    --color-brand-white: #d6e8ff;
     --color-brand-black: #001025;
-    --color-main: #0E2B50;
-    --color-header: #272F3B;
+    --color-main: #0e2b50;
+    --color-header: #272f3b;
 
     --animate-slide: slide 10s linear infinite;
     --animate-spin: spin 360s linear infinite;
@@ -68,7 +68,7 @@
     }
 
     --default-transition-duration: 0.3s;
-    --default-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+    --default-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 
     --breakpoint-sss: 18rem;
     --breakpoint-xss: 24rem;
@@ -100,7 +100,7 @@
 /* Paper background for main content */
 @utility bg-paper {
     background-image: url("../images/paper.webp");
-    background-color: #D6E8FF;
+    background-color: #d6e8ff;
 }
 
 @utility logo-anim {
