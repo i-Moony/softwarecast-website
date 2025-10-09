@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { Picture } from "astro:assets";
+import YouTubeEmbed from "../../components/youtube-embed.astro";
 import Default from "../../layouts/default.astro";
 
 export async function getStaticPaths() {
@@ -27,13 +27,11 @@ const tags =
     <div
         class="p-4 md:p-8 pattern-background-animated inline-block rounded-2xl"
     >
-        <Picture
-            src={episode.data.preview}
-            alt="Превью"
-            layout="constrained"
-            width="600"
-            formats={["avif", "webp", "jpeg", "png"]}
-            class="rounded-xl"
+        <YouTubeEmbed
+            preview={episode.data.preview}
+            title={episode.data.title}
+            videoId={episode.data.youtube_id}
+            class="w-128"
         />
     </div>
 </Default>
