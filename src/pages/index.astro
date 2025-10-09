@@ -1,5 +1,6 @@
 ---
 import Section from "../components/section.astro";
+import Chip from "../components/chip.astro";
 import Default from "../layouts/default.astro";
 import { Picture } from "astro:assets";
 
@@ -7,6 +8,11 @@ import Logo from "../images/logo.png";
 
 import Episode from "../components/episode.astro";
 import { getCollection } from "astro:content";
+
+import YouTube from "../images/icons/youtube.png";
+import Telegram from "../images/icons/telegram.png";
+import ApplePodcasts from "../images/icons/apple-podcasts.png";
+import YandexMusic from "../images/icons/yandex-music.png";
 
 const episodes = (await getCollection("episodes"))
     .sort((a, b) => b.data.episode_number - a.data.episode_number)
@@ -118,6 +124,41 @@ const description =
                         программах ведущего.
                     </li>
                 </ul>
+            </div>
+        </Section>
+        <Section id="quick-links">
+            <div slot="left" class="flex flex-col gap-4 w-full md:mt-8">
+                <h1
+                    class="font-intruder text-header text-3xl lg:text-4xl xl:text-5xl text-left md:text-center"
+                >
+                    Быстрые ссылки:
+                </h1>
+                <div
+                    class="flex flex-col sm:flex-row gap-4 justify-between flex-wrap max-xss:px-2"
+                >
+                    <Chip
+                        src={YouTube}
+                        title="YouTube"
+                        subtitle="Смотрите на"
+                        href="https://youtube.com/@software-cast"
+                    />
+                    <Chip
+                        src={Telegram}
+                        title="Telegram"
+                        subtitle="Оставайтесь на связи в"
+                        href="https://t.me/softwarecast"
+                    />
+                    <Chip
+                        src={ApplePodcasts}
+                        title="Apple Podcasts"
+                        href="ttps://podcasts.apple.com/us/podcast/%D1%81%D0%BE%D1%84%D1%82%D0%B2%D0%B0%D1%80%D1%8C%D0%BA%D0%B0%D1%81%D1%82/id1822168672"
+                    />
+                    <Chip
+                        src={YandexMusic}
+                        title="Яндекс Музыке"
+                        href="https://music.yandex.ru/album/37151903"
+                    />
+                </div>
             </div>
         </Section>
         <Section id="latest-episodes">
