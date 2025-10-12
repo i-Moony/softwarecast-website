@@ -27,8 +27,22 @@ const nextEpisode = episodes.find(
 const title = episode.data.title + " - СофтварьКаст";
 const description = episode.data.description;
 const tags =
-    "официально, official, эпизод" +
-    episode.data.title.split(" ").join(",").toLowerCase();
+    "официально, official, эпизод, " +
+    episode.data.title
+        .replaceAll(",", "")
+        .replaceAll(".", "")
+        .replaceAll("?", "")
+        .replaceAll("(", "")
+        .replaceAll(")", "")
+        .replaceAll("!", "")
+        .replaceAll("/", "")
+        .replaceAll(":", "")
+        .replaceAll(";", "")
+        .replace(/\s\s+/gu, " ")
+        .split(" ")
+        .join(", ")
+        .trim()
+        .toLowerCase();
 ---
 
 <Default {title} {description} {tags}>
