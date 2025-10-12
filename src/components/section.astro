@@ -1,8 +1,11 @@
 ---
-const {id} = Astro.props;
+const { id } = Astro.props;
 ---
 
-<section class="w-full flex flex-col gap-4 md:flex-row md:gap-8 lg:gap-12 items-center md:justify-between" {id}>
-    <slot name="left"></slot>
-    <slot name="right"></slot>
+<section
+    class="w-full flex flex-col gap-4 md:flex-row md:gap-8 lg:gap-12 items-center md:justify-between"
+    {id}
+>
+    <slot name="left" />
+    <slot name="right" />
 </section>

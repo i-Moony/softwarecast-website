@@ -1,41 +1,22 @@
 [
     {
-        "aliases": [
-            "telegram",
-            "tg",
-            "телеграм",
-            "тг"
-        ],
+        "aliases": ["telegram", "tg", "телеграм", "тг"],
         "url": "https://t.me/softwarecast"
     },
     {
-        "aliases": [
-            "youtube",
-            "yt",
-            "ютуб",
-            "ют"
-        ],
+        "aliases": ["youtube", "yt", "ютуб", "ют"],
         "url": "https://www.youtube.com/@software-cast"
     },
     {
-        "aliases": [
-            "donate",
-            "донат"
-        ],
+        "aliases": ["donate", "донат"],
         "url": "https://www.donationalerts.com/r/softwarecast"
     },
     {
-        "aliases": [
-            "boosty",
-            "бусти"
-        ],
+        "aliases": ["boosty", "бусти"],
         "url": "https://boosty.to/software-cast"
     },
     {
-        "aliases": [
-            "twitch",
-            "твич"
-        ],
+        "aliases": ["twitch", "твич"],
         "url": "https://www.twitch.tv/softwarecast"
     }
 ]

@@ -17,7 +17,8 @@
 
 const siteTitle = "СофтварьКаст";
 const author = "Данила Кононов a.k.a. moony";
-let keywords = "software, cast, softwarecast, podcast, софтварь, каст, софтварькаст, подкаст, moony, developer, разработчик, музыкант, musician, муни";
+let keywords =
+    "software, cast, softwarecast, podcast, софтварь, каст, софтварькаст, подкаст, moony, developer, разработчик, музыкант, musician, муни";
 const link = Astro.url;
 const { title = "СофтварьКаст", description, tags } = Astro.props;
 keywords = keywords + tags;
@@ -54,7 +55,12 @@ keywords = keywords + tags;
     <!-- Preload font -->
     <link rel="preconnect" href="/intruder-alert.woff2" />
     <link rel="preload" as="style" href="/intruder-alert.woff2" />
-    <link rel="stylesheet" href="/intruder-alert.woff2" media="print" onload="this.media = 'all'" />
+    <link
+        rel="stylesheet"
+        href="/intruder-alert.woff2"
+        media="print"
+        onload="this.media = 'all'"
+    />
 
     <!-- Metadata for SEO -->
     <meta name="author" content={author} />
@@ -80,7 +86,7 @@ keywords = keywords + tags;
 
     <!-- Metadata for Vivaldi -->
     <!-- Accent from Color -->
-    <meta name="theme-color" content="#074f8f">
+    <meta name="theme-color" content="#074f8f" />
 
     <!-- Give credits to Astro -->
     <meta name="generator" content={Astro.generator} />

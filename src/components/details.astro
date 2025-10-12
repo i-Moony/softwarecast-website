@@ -1,28 +1,68 @@
 ---
-const { summary, name } = Astro.props;
+const {
+    summary,
+    name,
+    color = "white",
+    open = false,
+    overflow = false,
+} = Astro.props;
+
+let titleColor, paragraphColor, markerColor;
+
+switch (color) {
+    case "white":
+        titleColor = "text-brand-white";
+        paragraphColor = "text-[#D6E8FFDD]";
+        markerColor = "#D6E8FFDD";
+        break;
+    case "black":
+        titleColor = "text-brand-black";
+        paragraphColor = "text-brand-black";
+        markerColor = "#001025";
+}
+
+let openAttribute = {};
+
+if (open) {
+    openAttribute = {
+        open: "open",
+    };
+}
+
+let overflowStyle = "hidden";
+
+if (overflow) {
+    overflowStyle = "visible";
+}
 ---
 
-<details {name} class="text-brand-white">
-    <summary class="font-intruder cursor-pointer list-outside text-2xl lg:text-3xl">{summary}</summary>
-    <div class="text-lg lg:text-xl mt-4 lg:text-justify flex flex-col gap-4 text-[#D6E8FFDD]">
-        <slot></slot>
+<details {name} class={titleColor} {...openAttribute}>
+    <summary
+        class="font-intruder cursor-pointer list-outside text-2xl lg:text-3xl"
+        >{summary}</summary
+    >
+    <div
+        class={"text-lg lg:text-xl mt-4 lg:text-justify flex flex-col gap-4 " +
+            paragraphColor}
+    >
+        <slot />
     </div>
 </details>
 
-<style>
+<style define:vars={{ markerColor, overflowStyle }}>
     summary::marker {
         font-size: 0.9em;
-        color: #D6E8FF80;
+        color: var(--markerColor);
     }
 
     details::details-content {
-        overflow-y: hidden;
+        overflow-y: var(--overflowStyle);
 
         block-size: 0px;
 
         transition:
-            block-size cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s,
-            content-visibility cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s;
+            block-size cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s,
+            content-visibility cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
 
         transition-behavior: allow-discrete;
     }
