@@ -25,18 +25,10 @@ const nextEpisode = episodes.find(
 );
 
 const title = episode.data.title + " - СофтварьКаст";
-const description = episode.data.title;
+const description = episode.data.description;
 const tags =
-    "официально, official, эпизод" + episode.data.title.split(" ").join(",");
-
-const localeOptions: Intl.DateTimeFormatOptions = {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    weekday: "long",
-    hour: "2-digit",
-    minute: "2-digit",
-};
+    "официально, official, эпизод" +
+    episode.data.title.split(" ").join(",").toLowerCase();
 ---
 
 <Default {title} {description} {tags}>
