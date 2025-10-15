@@ -1,19 +1,3 @@
-/*
-    Copyright 2025 Danila Kononov a.k.a. moony (C)
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-*/
-
 @import "tailwindcss";
 
 /*
@@ -29,12 +13,10 @@
     src: url(/intruder-alert.woff2) format("woff2");
 }
 
-/* Enable animation for details. */
 :root {
     interpolate-size: allow-keywords;
 }
 
-/* Tailwind Theme */
 @theme {
     --font-georgia: "Georgia";
     --font-intruder: "Intruder Alert";
@@ -75,7 +57,6 @@
     --breakpoint-xs: 30rem;
 }
 
-/* Static brand pattern image */
 @utility bg-pattern {
     background-color: #074f8f;
     background-image: url("../images/pattern.webp");
@@ -88,7 +69,6 @@
     background-size: 100px;
 }
 
-/* Animated brand pattern image */
 @utility bg-pattern-anim {
     @apply bg-pattern animate-slide;
 }
@@ -97,7 +77,6 @@
     @apply bg-pattern-dark animate-slide;
 }
 
-/* Paper background for main content */
 @utility bg-paper {
     background-image: url("../images/paper.webp");
     background-color: #d6e8ff;
