@@ -4,6 +4,15 @@
     "exclude": ["dist"],
     "compilerOptions": {
         "strictNullChecks": true,
-        "allowJs": true
+        "allowJs": true,
+        "paths": {
+            "@components/*": ["./src/components/*"],
+            "@images/*": ["./src/images/*"],
+            "@icons/*": ["./src/images/icons/*"],
+            "@websites/*": ["./src/images/websites/*"],
+            "@layouts/*": ["./src/layouts/*"],
+            "@utils/*": ["./src/utils/*"],
+            "@styles/*": ["./src/styles/*"]
+        }
     }
 }
