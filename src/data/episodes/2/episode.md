@@ -31,4 +31,9 @@ learn_more:
       title: "Гайды сообщества по GIMP"
     - link: "https://docs.krita.org/en/tutorials.html"
       title: "Официальные гайды по Krita"
+interesting_comments:
+    - author: "OlegUser"
+      link: "https://www.youtube.com/@OlegUser"
+      content: >
+          Про Adobe можно сказать одно: это одна из немногих программ, про которые даже в Европе/Америке шутят: «Самое лучшее в Фотошопе то, что за него не надо платить».
 ---
