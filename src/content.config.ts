@@ -34,20 +34,40 @@ const episodes = defineCollection({
                     }),
                 )
                 .optional(),
+            interesting_comments: z
+                .array(
+                    z.object({
+                        content: z.string(),
+                        author: z.string(),
+                        link: z.string(),
+                        respond: z.string().optional(),
+                    }),
+                )
+                .optional(),
+            unclear_moments: z
+                .array(
+                    z.object({
+                        title: z.string(),
+                        description: z.string(),
+                    }),
+                )
+                .optional(),
         }),
 });
 
-// const blog = defineCollection({
-//     loader: glob({
-//         pattern: "**/*.md",
-//         base: "./src/data/blog",
-//     }),
-//     schema: z.object({
-//         title: z.string(),
-//     }),
-// });
+const blog = defineCollection({
+    loader: glob({
+        pattern: "**/*.md",
+        base: "./src/data/blog",
+    }),
+    schema: z.object({
+        title: z.string(),
+        date: z.date(),
+        brief: z.string(),
+    }),
+});
 
 export const collections = {
-    // blog,
+    blog,
     episodes,
 };

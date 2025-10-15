@@ -1,13 +1,13 @@
 ---
 import { Picture } from "astro:assets";
-import Logo from "../images/logo.png";
+import Logo from "@images/logo.png";
 
 const { pathname } = Astro.url;
 ---
 
 <header
     id="header"
-    class="bg-pattern-anim text-brand-white font-intruder sticky top-0 flex flex-row justify-between items-center px-2 md:px-8 xl:px-32 2xl:px-64 py-2 z-50 pointer-fine:transition-all"
+    class="bg-pattern-anim text-brand-white font-intruder max-md:sticky top-0 flex flex-row justify-between items-center px-2 md:px-8 xl:px-32 2xl:px-64 py-2 z-50 pointer-fine:transition-all"
 >
     <a
         href="/"
@@ -31,6 +31,9 @@ const { pathname } = Astro.url;
         >
     </a>
     <nav id="header-right" class="flex gap-4 text-xl lg:gap-8 xl:text-2xl">
+        <a href="/blog" class={pathname.startsWith("/blog") ? "active" : ""}>
+            Блог
+        </a>
         <a
             href="/episodes"
             class={pathname.startsWith("/episodes") ? "active" : ""}>Эпизоды</a
@@ -58,6 +61,12 @@ const { pathname } = Astro.url;
     >
         <div class="flex flex-col justify-center items-center">
             <a href="/" class={pathname.length <= 1 ? "active" : ""}>Главная</a>
+            <a
+                href="/blog"
+                class={pathname.startsWith("/blog") ? "active" : ""}
+            >
+                Блог
+            </a>
             <a
                 href="/episodes"
                 class={pathname.startsWith("/episodes") ? "active" : ""}

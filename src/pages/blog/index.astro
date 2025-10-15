@@ -1,0 +1,37 @@
+---
+import Default from "../../layouts/default.astro";
+import { getCollection } from "astro:content";
+
+const blogs = (await getCollection("blog")).sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const title = "Блог - СофтварьКаст";
+const description = "На этой странице собраны все выпуски блога.";
+const tags = "официально, official, blog, блог, блоги, blogs";
+---
+
+<Default {title} {description} {tags}>
+    <div class="text-center mb-4 lg:mb-8 flex flex-col gap-2 items-center">
+        <h1 class="font-intruder text-4xl lg:text-5xl xl:text-6xl">Блог</h1>
+    </div>
+
+    <article class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        {
+            blogs.map((blog) => (
+                <section class="w-full flex flex-col gap-2 bg-brand-blue/25 rounded-2xl lg:rounded-3xl shadow-lg border-2 border-brand-blue/15 py-3 px-8 md:py-6 md:px-12 xss:text-justify hover:bg-brand-blue/35 transition-all">
+                    <h2 class="font-intruder text-2xl lg:text-3xl xl:text-4xl hover:underline underline-offset-8">
+                        <a href={"/blog/" + blog.id}>{blog.data.title}</a>
+                    </h2>
+                    <p class="text-lg">{blog.data.brief}</p>
+                    <a
+                        class="text-right underline underline-offset-4 text-lg"
+                        href={"/blog/" + blog.id}
+                    >
+                        Читать далее
+                    </a>
+                </section>
+            ))
+        }
+    </article>
+</Default>

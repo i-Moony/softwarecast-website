@@ -1,0 +1,103 @@
+---
+import { getCollection, render } from "astro:content";
+import Default from "../../layouts/default.astro";
+
+import extractTagsFromTitle from "@utils/extract-tags-from-title";
+
+export async function getStaticPaths() {
+    const blogs = await getCollection("blog");
+
+    return blogs.map((blog) => ({
+        params: { id: blog.id },
+        props: { blog },
+    }));
+}
+
+const { blog } = Astro.props;
+
+const title = blog.data.title + " - СофтварьКаст";
+const description = blog.data.brief;
+const tags =
+    "официально, official, эпизод, " + extractTagsFromTitle(blog.data.title);
+
+const { Content } = await render(blog);
+---
+
+<Default {title} {description} {tags}>
+    <h1 class="font-intruder text-3xl lg:text-4xl xl:text-5xl text-center">
+        {blog.data.title}
+    </h1>
+    <article id="blog">
+        <Content />
+    </article>
+</Default>
+
+<style is:global>
+    #blog {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #blog h2 {
+        text-align: justify;
+        margin-top: 2rem;
+        font-family: var(--font-intruder);
+        font-size: var(--text-2xl);
+    }
+
+    #blog h2::before {
+        content: "> ";
+    }
+
+    #blog h3 {
+        text-align: justify;
+        margin-top: 1rem;
+        font-family: var(--font-intruder);
+        font-size: var(--text-xl);
+    }
+
+    #blog h3::before {
+        content: ">> ";
+    }
+
+    #blog *:first-child {
+        margin-top: 0;
+    }
+
+    #blog p,
+    #blog ul,
+    #blog ol {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+        font-size: var(--text-lg);
+        text-align: justify;
+    }
+
+    #blog ul,
+    #blog ol {
+        margin-left: 2rem;
+        list-style: disc;
+    }
+
+    @media (width >= 64rem) {
+        #blog h2 {
+            font-size: var(--text-3xl);
+        }
+
+        #blog h3 {
+            font-size: var(--text-2xl);
+        }
+    }
+
+    @media (width >= 80rem) {
+        #blog h2 {
+            font-size: var(--text-4xl);
+        }
+
+        #blog h3 {
+            font-size: var(--text-3xl);
+        }
+    }
+</style>
