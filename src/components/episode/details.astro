@@ -1,0 +1,140 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    episode: CollectionEntry<"episodes">;
+}
+
+import Details from "@components/details/details.astro";
+import EpisodeComment from "@components/episode/comment.astro";
+import Link from "@icons/external-link-dark.svg";
+
+const { episode } = Astro.props;
+
+const apps = episode.data.apps_mentioned;
+const learn_more = episode.data.learn_more;
+const interesting_comments = episode.data.interesting_comments;
+const unclear_moments = episode.data.unclear_moments;
+
+const open_learn_more = typeof apps === "undefined";
+
+const show_comments =
+    typeof interesting_comments !== "undefined" ||
+    typeof unclear_moments !== "undefined";
+---
+
+<section
+    class="w-full flex flex-col gap-6 bg-brand-blue/25 rounded-2xl lg:rounded-3xl shadow-lg border-2 border-brand-blue/15 py-3 px-8 md:py-6 md:px-12 xss:text-justify"
+>
+    <Details summary="Описание" color="black" name="description" open={true}>
+        <p class="text-lg max-xss:text-base">{episode.data.description}</p>
+        <div class="text-lg max-xss:text-base">
+            <h3>Если вкратце, то я:</h3>
+            <ul class="list-disc pl-6">
+                {episode.data.bullet_points.map((point) => <li>{point}</li>)}
+            </ul>
+        </div>
+    </Details>
+</section>
+<section
+    class="w-full flex flex-col gap-6 bg-brand-blue/25 rounded-2xl lg:rounded-3xl shadow-lg border-2 border-brand-blue/15 py-3 px-8 md:py-6 md:px-12"
+>
+    {
+        apps && (
+            <Details
+                summary="Упомянутые программы"
+                color="black"
+                name="links"
+                open={true}
+            >
+                <ul class="list-disc pl-6 text-lg max-xss:text-base">
+                    {apps.map((app) => (
+                        <li>
+                            <a
+                                href={app.link}
+                                target="_blank"
+                                class="underline flex flex-row gap-1 items-center w-fit"
+                            >
+                                {app.title}
+                                <Link class="h-6 w-auto max-md:hidden" />
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </Details>
+        )
+    }
+    {
+        learn_more && (
+            <Details
+                summary="Узнать больше"
+                color="black"
+                name="links"
+                open={open_learn_more}
+            >
+                <ul class="list-disc pl-6 xss:text-justify">
+                    {learn_more.map((resource) => (
+                        <li>
+                            <div class="flex flex-col gap-0.5 text-lg max-xss:text-base">
+                                <a
+                                    href={resource.link}
+                                    target="_blank"
+                                    class="underline w-fit"
+                                >
+                                    {resource.title}
+                                </a>
+                                {resource.description && (
+                                    <p>{resource.description}</p>
+                                )}
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </Details>
+        )
+    }
+</section>
+{
+    show_comments && (
+        <section class="w-full flex flex-col gap-6 bg-brand-blue/25 rounded-2xl lg:rounded-3xl shadow-lg border-2 border-brand-blue/15 py-3 px-8 md:py-6 md:px-12">
+            {interesting_comments && (
+                <Details
+                    summary="Интересные комментарии"
+                    color="black"
+                    name="comments"
+                >
+                    <p class="max-xss:text-base text-lg xss:text-justify">
+                        Важно! В целях читаемости, единого стиля и чистоты языка
+                        я оставляю за собой право перефразировать комментарий,
+                        без потери или искажения смысла. Поэтому это не прямая
+                        цитата, а что-то вроде &laquo;пересказа&raquo;.
+                    </p>
+                    <hr class="border border-dashed rounded-full border-brand-black/75 my-2"></hr>
+                    <div class="flex flex-col gap-2 xss:text-justify max-xss:text-base text-lg">
+                        {interesting_comments.map((comment) => (
+                            <EpisodeComment {comment} />
+                        ))}
+                    </div>
+                </Details>
+            )}
+            {unclear_moments && (
+                <Details
+                    summary="Незакрытые вопросы"
+                    color="black"
+                    name="comments"
+                >
+                    <ul class="list-disc pl-6 xss:text-justify">
+                        {unclear_moments.map((moment) => (
+                            <li>
+                                <div class="flex flex-col gap-0.5">
+                                    <h3>{moment.title}</h3>
+                                    <p>{moment.description}</p>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </Details>
+            )}
+        </section>
+    )
+}
