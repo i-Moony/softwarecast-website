@@ -1,7 +1,7 @@
 ---
-import Episode from "../../components/episode.astro";
-import Default from "../../layouts/default.astro";
 import { getCollection } from "astro:content";
+import EpisodeCard from "@components/episode/card.astro";
+import Default from "@layouts/default.astro";
 
 const episodes = (await getCollection("episodes")).sort(
     (a, b) => b.data.episode_number - a.data.episode_number,
@@ -28,6 +28,6 @@ const tags = "официально, official, эпизод, эпизоды, epis
     <div
         class="grid grid-cols-1 gap-4 md:gap-6 px-2 md:px-4 lg:px-0 md:grid-cols-2 xl:grid-cols-3 lg:gap-7 xl:gap-5"
     >
-        {episodes.map((episode) => <Episode {episode} />)}
+        {episodes.map((episode) => <EpisodeCard {episode} />)}
     </div>
 </Default>
