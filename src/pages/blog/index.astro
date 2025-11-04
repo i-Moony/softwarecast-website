@@ -23,13 +23,15 @@ const tags = "официально, official, blog, блог, блоги, blogs"
                     <h2 class="font-intruder text-2xl lg:text-3xl xl:text-4xl hover:underline underline-offset-8">
                         <a href={"/blog/" + blog.id}>{blog.data.title}</a>
                     </h2>
-                    <p class="text-lg">{blog.data.brief}</p>
-                    <a
-                        class="text-right underline underline-offset-4 text-lg"
-                        href={"/blog/" + blog.id}
-                    >
-                        Читать далее
-                    </a>
+                    <div class="h-full flex flex-col justify-between">
+                        <p class="text-lg">{blog.data.brief}</p>
+                        <a
+                            class="text-right underline underline-offset-4 text-lg"
+                            href={"/blog/" + blog.id}
+                        >
+                            Читать далее
+                        </a>
+                    </div>
                 </section>
             ))
         }
