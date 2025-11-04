@@ -31,22 +31,26 @@ apps_mentioned:
     - link: "https://github.com/torne/Tiny-Tiny-RSS"
       title: "TinyTinyRSS"
 interesting_comments:
-    - author: "cant_comment_without_handle"
-      link: "https://www.youtube.com/@cant_comment_without_handle"
+    - author:
+          name: "cant_comment_without_handle"
+          link: "https://www.youtube.com/@cant_comment_without_handle"
       content: >
           Накидайте фидов.
-      respond: >
-          Вот часть из того, что у меня есть (в основном IT и экономика):
-          Новости из мира ПО, в основном открытого (OpenNet, советую, кстати, на самых интересных открывать полную новость и читать комментарии, можно как много забавного, так и много полезного найти, но в основном всё-таки всякие забавные споры): https://www.opennet.ru/opennews/opennews_full.rss
-          Новости из мира технологий в целом (Habr): https://habr.com/ru/rss/news/?fl=ru
-          HackerNews (предупреждаю, много): https://news.ycombinator.com/rss
-          Investing.com (тоже немало приходит, но только заголовки, так что можно просто бегло просматривать): https://www.investing.com/rss/news.rss
-          Все публикации с рейтингом выше 10 (Habr, периодически годное чтиво попадается): https://habr.com/ru/rss/articles/rated10/?fl=ru
-          Yahoo Finance (очень много новостей приходит, советую сразу в отдельную категорию и просто бегло глазами искать интересное): https://finance.yahoo.com/news/rssindex
+      respond:
+          content: |+
+              Вот часть из того, что у меня есть (в основном IT и экономика):
+              Новости из мира ПО, в основном открытого (OpenNet, советую, кстати, на самых интересных открывать полную новость и читать комментарии, можно как много забавного, так и много полезного найти, но в основном всё-таки всякие забавные споры): https://www.opennet.ru/opennews/opennews_full.rss
+              Новости из мира технологий в целом (Habr): https://habr.com/ru/rss/news/?fl=ru
+              HackerNews (предупреждаю, много): https://news.ycombinator.com/rss
+              Investing.com (тоже немало приходит, но только заголовки, так что можно просто бегло просматривать): https://www.investing.com/rss/news.rss
+              Все публикации с рейтингом выше 10 (Habr, периодически годное чтиво попадается): https://habr.com/ru/rss/articles/rated10/?fl=ru
+              Yahoo Finance (очень много новостей приходит, советую сразу в отдельную категорию и просто бегло глазами искать интересное): https://finance.yahoo.com/news/rssindex
 
-          Коммерсант (довольно неплохая сводка Российских новостей): https://www.kommersant.ru/rss/main.xml
+              Коммерсант (довольно неплохая сводка Российских новостей): https://www.kommersant.ru/rss/main.xml
 
-          Плюс можете посмотреть сборник интересных RSS из разных стран: https://github.com/plenaryapp/awesome-rss-feeds?tab=readme-ov-file
+              Плюс можете посмотреть сборник интересных RSS из разных стран: https://github.com/plenaryapp/awesome-rss-feeds?tab=readme-ov-file
 
-          А ещё через RSS Bridge можно парсить публичные ТГ-Каналы: https://rss-bridge.org/bridge01/ Надо просто найти секцию Telegram. Очень удобно. Планирую все свои ТГ-Каналы оттуда читать.
+              А ещё через RSS Bridge можно парсить публичные ТГ-Каналы: https://rss-bridge.org/bridge01/
+              Надо просто найти секцию Telegram. Очень удобно. Планирую все свои ТГ-Каналы оттуда читать.
+
 ---

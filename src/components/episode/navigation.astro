@@ -4,9 +4,10 @@ import type { CollectionEntry } from "astro:content";
 
 interface Props {
     episode: CollectionEntry<"episodes">;
+    navigate?: boolean;
 }
 
-const { episode } = Astro.props;
+const { episode, navigate = false } = Astro.props;
 
 const episodes = await getCollection("episodes");
 const previousEpisode = episodes.find(
@@ -43,3 +44,21 @@ const nextEpisode = episodes.find(
         )
     }
 </section>
+
+<script define:vars={{ navigate, previousEpisode, nextEpisode }} is:inline>
+    if (navigate) {
+        document.addEventListener("keyup", (event) => {
+            switch (event.key) {
+                case "ArrowLeft":
+                    if (!previousEpisode) break;
+                    console.log("/episodes/" + previousEpisode.id);
+                    document.location.href = "/episodes/" + previousEpisode.id;
+                    break;
+                case "ArrowRight":
+                    if (!nextEpisode) break;
+                    document.location.href = "/episodes/" + nextEpisode.id;
+                    break;
+            }
+        });
+    }
+</script>

@@ -35,12 +35,14 @@ learn_more:
     - link: "https://docs.syncthing.net"
       title: "Документация Syncthing"
 interesting_comments:
-    - author: "VeloSib-888"
-      link: "https://www.youtube.com/@VeloSib-888"
+    - author:
+          name: "VeloSib-888"
+          link: "https://www.youtube.com/@VeloSib-888"
       content: >
           У Apple синхронизация работает в любой сети, помтоу что устройства по-умолчанию подсоединяются в свою Zero сеть через Apple'овский домен, потому и устройства видны в зоне доступа на адресном дереве на подобие Active Directory в Windows.
-    - author: "andreylarin"
-      link: "https://www.youtube.com/@andreylarin"
+    - author:
+          name: "andreylarin"
+          link: "https://www.youtube.com/@andreylarin"
       content: >
           Syncthing использую, доволен. Были пару раз сбои в синхронизации, но потом с обновлениями стало всё стабильно. Программа уже стандартная и незаменимая в работе. Платные облака не использую теперь.
 ---

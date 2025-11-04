@@ -33,14 +33,17 @@ learn_more:
       description: >
           Приватный способ синхронизации Obsidian.
 interesting_comments:
-    - author: "worldOFfans"
-      link: "https://www.youtube.com/@worldOFfans"
+    - author:
+          name: "worldOFfans"
+          link: "https://www.youtube.com/@worldOFfans"
       content: >
           Obsidian - косплей продуктивности.
-    - author: "ViktorAr2023"
-      link: "https://www.youtube.com/@ViktorAr2023"
+    - author:
+          name: "ViktorAr2023"
+          link: "https://www.youtube.com/@ViktorAr2023"
       content: >
           Если честно, много конкурентов тоже Markdown используют. Но для серьёзного использования я препочту аналог, схожий с Word, например OneNote в котором реализовано пространство открытое, там бесконечная доска. И можно много создавать, рисовать прямо на холсте и другое, что Obsidian с плагинами не может)
-      respond: >
-          Согласен, что к сожалению прямых конкурентов OneNote нет. Но Obsidian очень способная программка. Холст + плагин Excalidraw для меня очень хорошая комбинация. Я вот как раз не хочу текст и рисунки смешивать. Но каждому свое.
+      respond:
+          content: >
+              Согласен, что к сожалению прямых конкурентов OneNote нет. Но Obsidian очень способная программка. Холст + плагин Excalidraw для меня очень хорошая комбинация. Я вот как раз не хочу текст и рисунки смешивать. Но каждому свое.
 ---
