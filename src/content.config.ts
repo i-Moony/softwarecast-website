@@ -1,6 +1,40 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
+const app_mentioned = z.object({
+    link: z.string(),
+    title: z.string(),
+});
+
+const learn_more = z.object({
+    link: z.string(),
+    title: z.string(),
+    description: z.string().optional(),
+});
+
+const baseCommentSchema = z.object({
+    content: z.string(),
+    author: z
+        .object({
+            link: z.string(),
+            name: z.string(),
+        })
+        .optional(),
+});
+
+type Comment = z.infer<typeof baseCommentSchema> & {
+    respond?: Comment;
+};
+
+const commentSchema: z.ZodType<Comment> = baseCommentSchema.extend({
+    respond: z.lazy(() => commentSchema).optional(),
+});
+
+const unclear_moment = z.object({
+    title: z.string(),
+    description: z.string(),
+});
+
 const episodes = defineCollection({
     loader: glob({
         pattern: "**/*.md",
@@ -17,47 +51,16 @@ const episodes = defineCollection({
             preview: image(),
             description: z.string(),
             bullet_points: z.array(z.string()),
-            apps_mentioned: z
-                .array(
-                    z.object({
-                        link: z.string(),
-                        title: z.string(),
-                    }),
-                )
-                .optional(),
-            learn_more: z
-                .array(
-                    z.object({
-                        link: z.string(),
-                        title: z.string(),
-                        description: z.string().optional(),
-                    }),
-                )
-                .optional(),
-            interesting_comments: z
-                .array(
-                    z.object({
-                        content: z.string(),
-                        author: z.string(),
-                        link: z.string(),
-                        respond: z.string().optional(),
-                    }),
-                )
-                .optional(),
-            unclear_moments: z
-                .array(
-                    z.object({
-                        title: z.string(),
-                        description: z.string(),
-                    }),
-                )
-                .optional(),
+            apps_mentioned: z.array(app_mentioned).optional(),
+            learn_more: z.array(learn_more).optional(),
+            interesting_comments: z.array(commentSchema).optional(),
+            unclear_moments: z.array(unclear_moment).optional(),
         }),
 });
 
 const blog = defineCollection({
     loader: glob({
-        pattern: "**/*.md",
+        pattern: "**/*.{md,mdx}",
         base: "./src/data/blog",
     }),
     schema: z.object({
