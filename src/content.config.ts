@@ -35,6 +35,11 @@ const unclear_moment = z.object({
     description: z.string(),
 });
 
+const program_category = z.object({
+    title: z.string(),
+    description: z.string(),
+});
+
 const episodes = defineCollection({
     loader: glob({
         pattern: "**/*.md",

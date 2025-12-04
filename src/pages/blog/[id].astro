@@ -24,6 +24,14 @@ const { Content } = await render(blog);
 ---
 
 <Default {title} {description} {tags}>
+    <link
+        slot="head"
+        rel="alternate"
+        type="application/rss+xml"
+        title="Блог - СофтварьКаст"
+        href={new URL("/blog/main.xml", Astro.site)}
+    />
+
     <h1 class="font-intruder text-3xl lg:text-4xl xl:text-5xl text-center">
         {blog.data.title}
     </h1>

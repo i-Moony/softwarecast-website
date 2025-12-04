@@ -8,7 +8,9 @@ const { title = "СофтварьКаст", description, tags } = Astro.props;
 ---
 
 <html lang="ru" dir="ltr">
-    <Head {title} {description} {tags} />
+    <Head {title} {description} {tags}>
+        <slot name="head" />
+    </Head>
     <body class="font-georgia bg-pattern-anim">
         <div class="max-w-[2160px] mx-auto">
             <Header />
