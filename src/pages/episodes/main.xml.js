@@ -7,7 +7,7 @@ export async function GET(context) {
         (a, b) => b.data.episode_number - a.data.episode_number,
     );
     return rss({
-        title: "Блог обновлений сайта - СофтварьКаст",
+        title: "Эпизоды - СофтварьКаст",
         description: "Здесь собраны все обновления, связанные с сайтом.",
         site: context.site,
         xmlns: {
